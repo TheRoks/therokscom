@@ -1,10 +1,9 @@
 {
-  "name": "gatsby-starter-nehalem",
-  "description": "A starter for the Gatsby Nehalem theme",
+  "name": "theroks-blog",
+  "description": "TheRoks.com blog",
   "author": {
-    "name": "Kevin Hirczy",
-    "email": "kevin@nehalist.io",
-    "url": "https://nehalist.io"
+    "name": "Stefan Roks",
+    "email": "stefan@theroks.com"
   },
   "private": true,
   "version": "1.0.0",
@@ -18,8 +17,24 @@
   },
   "dependencies": {
     "@nehalist/gatsby-theme-nehalem": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
     "gatsby": "^2.13.55",
+    "gatsby-plugin-google-analytics": "^2.1.20",
+    "gatsby-plugin-sitemap": "^2.2.17",
+    "gatsby-theme": "^0.0.6",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-sharingbuttons": "^1.0.0",
+    "read-time-estimate": "^0.0.2"
   }
 }
