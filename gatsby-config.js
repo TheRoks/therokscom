@@ -16,7 +16,7 @@ module.exports = {
     footerMenu: [
       {
         name: "RSS",
-        path: "/rss.xml",
+        path: "https://feeds.feedburner.com/theroks,
       },
       {
         name: "Sitemap",
