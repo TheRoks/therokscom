@@ -184,7 +184,7 @@ const SEO: FunctionComponent<SEOProps> = ({
           "headline": "${siteTitle}",
           "url": "${canonical}",
           ${publishedAt ? `"datePublished": "${publishedAt}",` : ``}
-          ${updatedAt ? `"datePublished": "${updatedAt}",` : ``}
+          ${updatedAt ? `"dateModified": "${updatedAt}",` : ``}
           ${
             metaImage
               ? `"image": {
@@ -197,7 +197,13 @@ const SEO: FunctionComponent<SEOProps> = ({
           }
           "publisher": {
             "@type": "Organization",
-            "name": "${metadata.title}"
+            "name": "${metadata.title}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "${metaImage}",
+                "width": "1000",
+                "height": "520"
+              }
           },
           "description": "${metaDescription}",
           "mainEntityOfPage": {
