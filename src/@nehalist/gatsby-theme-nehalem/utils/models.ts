@@ -33,7 +33,6 @@ export interface SocialChannels {
   youtube?: string;
   github?: string;
   twitch?: string;
-  rss?: string;
 }
 
 export interface MenuItem {

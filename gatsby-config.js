@@ -14,6 +14,10 @@ module.exports = {
       },
     ],
     footerMenu: [
+      {
+        name: "Rss Feed",
+        path: "https://feeds.feedburner.com/theroks",
+      },
     ],
     search: true,
     author: {

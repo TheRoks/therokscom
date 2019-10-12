@@ -1,11 +1,11 @@
 const fontSizes = [16, 24, 48, 64];
 
 const colors = {
-  primary: "#37a7c4", // deep lemon
-  secondary: "#555555", // illuminating emerald
-  secondaryDarker: "#197559",
-  smokyBlack: "#090707", // smoky black
-  snow: "#F7F7F7", // snow
+  primary: "#37a7c4", // near-Moonstone
+  secondary: "#555555", // Davy's grey
+  secondaryDarker: "#197559", // near-Salem
+  smokyBlack: "#000000", // black
+  snow: "#F7F7F7", // near-Guyabano
   black09: "rgba(25, 10, 0, 0.9)",
   shadow: "rgba(0, 0, 0, 0.09)",
 };

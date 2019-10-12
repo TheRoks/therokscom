@@ -65,16 +65,10 @@ const Footer: React.FC<FooterProps> = ({ menu }) => (
     <StyledNav>
       <ul>
         {menu.map((item, index) => (
-          <li key={index}>
-            {/* Links to RSS and Sitemap are handled
-                  differently (for now) since they're technically external links */}
-            {["/rss.xml", "/sitemap.xml"].includes(item.path) ? (
+          <li key={index}>        
               <FooterMenuItem href={item.path} rel="noopener noreferrer">
                 {item.name}
-              </FooterMenuItem>
-            ) : (
-              <FooterMenuLink to={item.path}>{item.name}</FooterMenuLink>
-            )}
+              </FooterMenuItem>           
           </li>
         ))}
       </ul>
