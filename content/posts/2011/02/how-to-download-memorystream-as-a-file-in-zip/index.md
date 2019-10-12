@@ -1,7 +1,7 @@
 ---
 title: "How to download MemoryStream as a file in zip"
 path: "how-to-download-memorystream-as-a-file-in-zip"
-tags: [".NET"]
+tags: ["dotNET"]
 excerpt: "Using the SharpZipLib it’s possible to zip and unzip files. This can be a good solution when file size matters. Downloading files that are ziped can save many bandwidth. In this case a object is serialized to XML and put into a ZipOutputStream which belongs to SharpZipLib."
 created: 2011-02-25
 updated: 2011-02-25

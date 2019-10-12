@@ -1,7 +1,7 @@
 ---
 title: "Secure WCF communication with certificates"
 path: "secure-wcf-communication-with-certificates"
-tags: [".NET"]
+tags: ["dotNET"]
 excerpt: "When having hosted a WCF webservice that is secured by a certificate. Opening the service with a browser al the security stuff is handled by the browser. This situation is different. The caller is a .NET Click-once application, that is hosted near the webservice. This application has to handle the use of the certificate by itself."
 created: 2011-01-26
 updated: 2011-01-26

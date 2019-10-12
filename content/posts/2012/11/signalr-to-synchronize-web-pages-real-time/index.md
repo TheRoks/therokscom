@@ -1,7 +1,7 @@
 ---
 title: "SignalR to synchronize web pages real-time"
 path: "signalr-to-synchronize-web-pages-real-time"
-tags: [".NET"]
+tags: ["dotNET"]
 excerpt: "In a nutshell, SignalR allows you to pass data between client and server in realtime. It will run on .Net 4.0 or 4.5 and to get websockets running, you will need IIS8 or IIS8 Express. That said, it will run on older versions of IIS and will switch to different transport modes."
 created: 2012-11-25
 updated: 2012-11-25

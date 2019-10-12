@@ -14,14 +14,6 @@ module.exports = {
       },
     ],
     footerMenu: [
-      {
-        name: "RSS",
-        path: "https://feeds.feedburner.com/theroks",
-      },
-      {
-        name: "Sitemap",
-        path: "/sitemap.xml",
-      },
     ],
     search: true,
     author: {
@@ -35,6 +27,7 @@ module.exports = {
         youtube: ``,
         github: `https://github.com/theroks`,
         twitch: ``,
+        rss: `https://feeds.feedburner.com/theroks`
       },
     },
   },

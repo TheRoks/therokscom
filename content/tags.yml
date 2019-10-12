@@ -6,7 +6,7 @@
   color: "#b82934"
   icon: ./assets/images/logo.png
   featured: false
-- name: .NET
+- name: dotNET
   color: "#681d79"
   icon: ./assets/images/logo-dot-net-framework.png
   featured: true
@@ -17,4 +17,4 @@
 - name: DevOps
   color: "#008ad7"
   icon: ./assets/images/azure-devops.png
-  featured: true
+  featured: false
