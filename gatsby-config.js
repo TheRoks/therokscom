@@ -5,12 +5,16 @@ module.exports = {
     twitterHandle: "@theroks",
     url: "https://theroks.com",
     description:
-      "Thoughts on .NET and related stuff",
+      "Thoughts on Microsoft .NET and related stuff",
     topics: [],
     menu: [
       {
         name: "Home",
         path: "/",
+      },
+      {
+        name: "Sitecore",
+        path: "/tag/sitecore",
       },
     ],
     footerMenu: [
@@ -31,7 +35,6 @@ module.exports = {
         youtube: ``,
         github: `https://github.com/theroks`,
         twitch: ``,
-        rss: `https://feeds.feedburner.com/theroks`
       },
     },
   },
