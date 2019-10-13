@@ -1,6 +1,6 @@
 ---
 title: "Use Powershell to find content types and sitecolumns"
-path: "use-powershell-to-find-content-types-and-sitecolumns"
+path: "/use-powershell-to-find-content-types-and-sitecolumns"
 tags: ["SharePoint"]
 excerpt: "Sometimes you want to find all content types and sitecolumns you created in SharePoint. A simple way to acomplish this is the use of PowerShell. Conditional in this script is that all my custom content types and sitecolumns belong to the same group."
 created: 2012-06-12

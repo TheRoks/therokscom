@@ -1,6 +1,6 @@
 ---
 title: "Managed Metadata Navigation"
-path: "managed-metadata-navigation"
+path: "/managed-metadata-navigation"
 tags: ["SharePoint"]
 excerpt: "Managed metadata is a hierarchical collection of centrally managed terms that you can define, and then use as attributes for items."
 created: 2012-12-22

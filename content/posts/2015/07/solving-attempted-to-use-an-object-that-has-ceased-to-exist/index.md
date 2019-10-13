@@ -1,6 +1,6 @@
 ---
 title: "Solving: Attempted to use an object that has ceased to exist."
-path: "solving-attempted-to-use-an-object-that-has-ceased-to-exist"
+path: "/solving-attempted-to-use-an-object-that-has-ceased-to-exist"
 tags: ["SharePoint"]
 excerpt: "Sometimes in SharePoint you get errors that were not very clear when you start. However if you develop for some time in SharePoint you’ll learn the best practices and you will avoid some simple mistakes. One of these errors is Attempted to use an object that has ceased to exist."
 featuredImage: "./attempted-to-use-an-object-that-has-ceased-to-exist.png"

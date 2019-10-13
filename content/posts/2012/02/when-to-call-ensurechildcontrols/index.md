@@ -1,6 +1,6 @@
 ---
 title: "When to call EnsureChildControls in custom controls"
-path: "when-to-call-ensurechildcontrols"
+path: "/when-to-call-ensurechildcontrols"
 tags: ["dotNET"]
 excerpt: "Should I call EnsureChildControls in code?"
 created: 2012-02-05

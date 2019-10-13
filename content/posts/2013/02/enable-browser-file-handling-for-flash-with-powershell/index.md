@@ -1,6 +1,6 @@
 ---
 title: "Enable Browser File Handling for Flash with Powershell"
-path: "enable-browser-file-handling-for-flash-with-powershell"
+path: "/enable-browser-file-handling-for-flash-with-powershell"
 tags: ["SharePoint"]
 excerpt: "Introduced into SharePoint 2010 as a security feature and the same applies to SharePoint 2013. When a user requests a file within SharePoint, the web server (IIS) will respond including the “X-Download-Options: noopen” HTTP Response Header if Browser File Handling is set to Strict and the file (MIME) type accessed is not on the Web Applications trusted file (MIME) type list. This header works in conjunction with Internet Explorer (version 8 or higher) to prevent potential security risks when accessing files online and will stop files from being directly opened."
 created: 2013-02-28

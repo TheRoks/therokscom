@@ -1,6 +1,6 @@
 ---
 title: "Using the wpp.targets file together with Sitecore"
-path: "using-wpp-targets-file-together-sitecore"
+path: "/using-wpp-targets-file-together-sitecore"
 tags: ["Sitecore"]
 excerpt: "When working on Sitecore and deploying modules to a Sitecore site we only want to deploy artifacts that are ours and not from Sitecore. This way we want to keep the deployment packages clean and fast. To manage the contents and behaviors of deployment packages we can use a wpp.targets file."
 featuredImage: "./wpptarget-with-sitecore-deployment.png"

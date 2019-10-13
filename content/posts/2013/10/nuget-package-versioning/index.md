@@ -1,6 +1,6 @@
 ---
 title: "How to: NuGet package versioning"
-path: "nuget-package-versioning"
+path: "/nuget-package-versioning"
 tags: ["dotNET"]
 excerpt: "NuGet, the package manager that is widely used in Visual Studio, has a lot of features that are really nice to use. However some things can be challenging. For example creating a NuGet package. It looks quite simple if you read the documentation on NuGet.org. Creating this in an automated process has some obstacles, like versioning."
 created: 2013-10-24

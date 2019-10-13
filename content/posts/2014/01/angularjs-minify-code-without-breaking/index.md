@@ -1,6 +1,6 @@
 ---
 title: "AngularJS Minify your code without breaking it"
-path: "angularjs-minify-code-without-breaking"
+path: "/angularjs-minify-code-without-breaking"
 tags: ["AngularJS"]
 excerpt: Minifying your clientside code is a best practice. Minification performs a variety of different code optimizations to scripts or css, such as removing unnecessary white space and comments and shortening variable names to one character. This last thing can be problem with Angular if you do it right.
 created: 2014-01-12

@@ -1,6 +1,6 @@
 ---
 title: "Show All Draft Documents with Content Query WebPart"
-path: "show-all-draft-documents-with-content-query-webpart"
+path: "/show-all-draft-documents-with-content-query-webpart"
 tags: ["SharePoint"]
 excerpt: "SharePoint has the capability to show all checkout page of web. Manage Content and Structure has several built-in filters like: All Draft Documents and Checked Out to Me."
 created: 2013-03-22
