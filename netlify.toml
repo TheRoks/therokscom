@@ -15,4 +15,4 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
     Feature-Policy = "vibrate none; geolocation none; unsized-media none;"
-    Content-Security-Policy = "script-src www.google-analytics.com 'self' 'unsafe-inline'"
+    Content-Security-Policy = "default-src 'self'; script-src * blob: data: 'self' 'unsafe-inline' 'unsafe-eval' ;style-src 'self' 'unsafe-inline'; img-src data: 'self' *; font-src data: 'self';connect-src 'self'; object-src 'none'; form-action 'self'; child-src 'self'; frame-ancestors 'self';frame-src 'self'; worker-src blob;"
