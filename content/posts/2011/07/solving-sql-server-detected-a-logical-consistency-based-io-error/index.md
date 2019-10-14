@@ -11,7 +11,7 @@ updated: 2011-07-28
 
 When creating a new Secure Store Service Application in SharePoint 2010 I had this error:
 
-`Creation of Secure Store Service Application SecureStoreService failed because of the following errors: SQL Server detected a logical consistency-based I/O error: unable to decrypt page due to missing DEK. It occurred during a read of page (1:15848) in database ID 5 at offset 0x00000007bd0000 in file ‘C:Program FilesMicrosoft SQL ServerMSSQL10_50.MSSQLSERVERMSSQLDATAdev.local_SharePoint_Configuration_Database.mdf’. Additional messages in the SQL Server error log or system event log may provide more detail. This is a severe error condition that threatens database integrity and must be corrected immediately. Complete a full database consistency check (DBCC CHECKDB). This error can be caused by many factors; for more information, see SQL Server Books Online.`
+`Creation of Secure Store Service Application SecureStoreService failed because of the following errors: SQL Server detected a logical consistency-based I/O error: unable to decrypt page due to missing DEK. It occurred during a read of page (1:15848) in database ID 5 at offset 0x00000007bd0000 in file ‘dev­.local_SharePoint­_Conf_Database.mdf’. Additional messages in the SQL Server error log or system event log may provide more detail. This is a severe error condition that threatens database integrity and must be corrected immediately. Complete a full database consistency check (DBCC CHECKDB). This error can be caused by many factors; for more information, see SQL Server Books Online.`
 
 There was definitely something wrong with SharePoints configuration database. But as the error message said I did run a DBCC CHECKDB. This was the result:
 
