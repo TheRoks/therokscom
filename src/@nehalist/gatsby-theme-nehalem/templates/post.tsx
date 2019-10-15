@@ -375,7 +375,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
                 text="Tweet"
                 shareText={`${post.frontmatter.title} by ${twitterHandle} ${
                   metadata.site.siteMetadata.siteUrl
-                }${post.frontmatter.path} ${post.frontmatter.tags
+                }${post.frontmatter.path}?utm_source=${post.frontmatter.title}&utm_medium=twitter&utm_campaign=twitter ${post.frontmatter.tags
                   .map(tag => `#${tag}`)
                   .join(" ")}
                 `}

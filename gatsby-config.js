@@ -86,7 +86,7 @@ module.exports = {
             }
           })
       }
-    },
+    },    
     {
       resolve: `@nehalist/gatsby-theme-nehalem`,
       options: {
@@ -101,6 +101,60 @@ module.exports = {
           icon: `${__dirname}/content/assets/images/icon.png`,
         },
       },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.excerpt,
+                  date: edge.node.frontmatter.created,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path + '?utm_source='+edge.node.frontmatter.title+'&utm_medium=RSS&&utm_campaign=RSS%20Feed',
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___created] },
+                filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+              ) {
+                edges {
+                  node {
+                    html
+                    frontmatter {
+                      title
+                      excerpt
+                      path
+                      created
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            output: `/rss.xml`,
+            title: `RSS Feed`
+          }
+        ]
+      }
     },
   ],
 };
