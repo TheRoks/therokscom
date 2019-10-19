@@ -16,7 +16,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@nehalist/gatsby-theme-nehalem": "^1.0.3",
+    "@nehalist/gatsby-theme-nehalem": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",

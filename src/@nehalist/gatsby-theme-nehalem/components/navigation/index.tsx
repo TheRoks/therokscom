@@ -40,11 +40,11 @@ const Navigation: FunctionComponent<NavigationProps> = ({
             ))}
         </NavMenu>
         <SearchContainer>
-          {/* {showSearch && !dark && (
+          {showSearch && (
             <NavMenu>
               <Search />
             </NavMenu>
-          )} */}
+          )}
         </SearchContainer>
       </NavWrapper>
     </Nav>

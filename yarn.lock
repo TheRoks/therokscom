@@ -1113,9 +1113,9 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nehalist/gatsby-theme-nehalem@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@nehalist/gatsby-theme-nehalem/-/gatsby-theme-nehalem-1.0.3.tgz#8baec2f16198911ba274cdaeb4095715960a668d"
+"@nehalist/gatsby-theme-nehalem@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nehalist/gatsby-theme-nehalem/-/gatsby-theme-nehalem-1.0.5.tgz#bfee324d9d1bfacd3802137a04ecff7c4c84a565"
   dependencies:
     "@mdx-js/mdx" "^1.0.27"
     "@mdx-js/react" "^1.0.27"

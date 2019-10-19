@@ -60,7 +60,6 @@ export const NavMenuItem = styled.li`
 
 export const NavLink = styled(Link)<{ darkmode?: number }>`
   color: ${props => (props.darkmode ? "#fff" : theme.colors.smokyBlack)};
-  opacity: ${props => (props.darkmode ? "0.8" : "0.6")};
   padding: 16px;
   transition: opacity 0.3s;
 
@@ -77,7 +76,6 @@ export const SearchContainer = styled.div`
 export const ToggleSearchButton = styled.button`
   cursor: pointer;
   color: ${theme.colors.smokyBlack};
-  opacity: 0.6;
   background: none;
   outline: none;
   border: 0;
