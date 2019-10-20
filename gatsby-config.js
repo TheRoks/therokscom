@@ -103,6 +103,22 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              withWebp: true
+            }
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
