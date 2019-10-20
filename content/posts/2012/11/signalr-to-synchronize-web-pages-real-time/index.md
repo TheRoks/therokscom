@@ -53,7 +53,7 @@ The /signalr/hubs endpoint exposes all the available hubs in the solution and le
 To get this route working you’ll need to add some code.
 
 ```csharp
-[assembly: PreApplicationStartMethod(typeof(TheRoksSignalRDemo.RegisterHubs), 
+[assembly: PreApplicationStartMethod(typeof(TheRoksSignalRDemo.RegisterHubs),
                                      "Start")]
 namespace TheRoksSignalRDemo
 {
@@ -62,7 +62,7 @@ namespace TheRoksSignalRDemo
         public static void Start()
         {
             // Register the default hubs route: ~/signalr/hubs
-            RouteTable.Routes.MapHubs();            
+            RouteTable.Routes.MapHubs();
         }
     }
 }
@@ -79,7 +79,7 @@ public class Chat : Hub
 {
     public void Send(string message)
     {
-        // Call the addMessage method on all clients            
+        // Call the addMessage method on all clients
         Clients.All.addMessage(message);
     }
 }
@@ -91,10 +91,10 @@ Finally, you should register your client callbacks in JS and wire-up the buttons
 
 ```js
 $(function () {
-    // Proxy created on the fly          
+    // Proxy created on the fly
     var chat = $.connection.chat;
 
-    // Declare a function on the chat hub so the server can invoke it          
+    // Declare a function on the chat hub so the server can invoke it
     chat.client.addMessage = function (message) {
         $('#messages').append('<li>' + message + '</li>');
     };

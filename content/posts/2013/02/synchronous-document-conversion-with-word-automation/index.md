@@ -18,14 +18,14 @@ In a previous post I explained about Word Automation Services in SharePoint 2010
 ## Word Automation in SharePoint 2013
 
 * New Immediate based request (no waiting)
- * New option to execute conversion immediately, not necessarily from timer job
- * Operate on one file at the time per request
- * Configuration options from CA for simultaneous request amount
+  * New option to execute conversion immediately, not necessarily from timer job
+  * Operate on one file at the time per request
+  * Configuration options from CA for simultaneous request amount
 * Notify or update items in SharePoint after completion
- * Word Automation Services can perform file conversions and can update files
+  * Word Automation Services can perform file conversions and can update files
 * Allow WAS to support streams
- * Convert streams from API perspective as inputs and outputs for file operations
- * Streams are stored in memory within Application Server Manager and Worker – not in content database
+  * Convert streams from API perspective as inputs and outputs for file operations
+  * Streams are stored in memory within Application Server Manager and Worker – not in content database
 
 ## Architecture
 

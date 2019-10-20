@@ -17,7 +17,7 @@ We’ve always been able to use folders to navigate a hierarchy in a SharePoint 
 
 ## Configure it
 
-![Document library settings](./sitecollectionsettings.png) First of all you have to activate the Metadata Navigation and Filtering site feature (MetaDataNav, 7201d6a4-a5d3-49a1-8c19-19c4bac6e668) in Site Settings. Once you’ve done this, you can configure library metadata navigation in the document library’s Settings screen. 
+![Document library settings](./sitecollectionsettings.png) First of all you have to activate the Metadata Navigation and Filtering site feature (MetaDataNav, 7201d6a4-a5d3-49a1-8c19-19c4bac6e668) in Site Settings. Once you’ve done this, you can configure library metadata navigation in the document library’s Settings screen.
 
 Metadata can be used as two different kinds of navigation:
 

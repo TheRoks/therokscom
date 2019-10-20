@@ -18,7 +18,7 @@ The endpoint configuration is a wsHttpBinding with a custom behavior.
           address="https://application.hosting.corp/Services/Import.svc"
           behaviorConfiguration="stage"
           binding="wsHttpBinding"
-          bindingConfiguration="wsHttpBinding_IImport" 
+          bindingConfiguration="wsHttpBinding_IImport"
           contract="ImportService.IImport" />
 ```
 
@@ -52,7 +52,7 @@ The custom behaviour holds the location where to find the certificate on the cli
 All this wasn’t even enough to get is working. The error: “Could not establish trust relationship for the SSL/TLS secure channel with authority staging.hosting.corp” did still appear. To get it working some dummy code is inserted on the client.
 
 ```csharp
-ServicePointManager.ServerCertificateValidationCallback 
+ServicePointManager.ServerCertificateValidationCallback
   = new RemoteCertificateValidationCallback(CertificateValidation);
 ```
 

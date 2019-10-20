@@ -73,7 +73,7 @@ MyItemStyle.xsl
   <xsl:param name="ItemsHaveStreams">
     <xsl:value-of select="'False'" />
   </xsl:param>
-  <xsl:variable name="OnClickTargetAttribute" 
+  <xsl:variable name="OnClickTargetAttribute"
     select="string('javascript:this.target=&quot;_blank&quot;')" />
   <xsl:variable name="ImageWidth" />
   <xsl:variable name="ImageHeight" />

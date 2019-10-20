@@ -56,11 +56,11 @@ private static string QueryTemplates(string documentName)
 									<Value Type='Text'>{0}</Value>
 									</Eq>
 								</Where>
-							</Query>                                          
+							</Query>
 							<ViewFields>
 								<FieldRef Name=""EmailTemplate"" />
 							</ViewFields>
-								<RowLimit>1</RowLimit>     
+								<RowLimit>1</RowLimit>
 							</View>", documentName);
 }
 ```

@@ -17,7 +17,7 @@ In the results files with extension pdf need to show lower in the ranking than a
 
 Display properties Search Action Links web partThe order of ranking is determined by a ranking profile. FAST for SharePoint has out of the box a lot ranking profiles like; relevance, size, site rank, date and many others. The default sort order is relevance. The only change to the relevance profile is that pdf documents will be lower ranked. To achieve the result we will make a copy of the relevance profile and demote pdf documents.
 
-## This was done by creating a PowerShell script.
+## This was done by creating a PowerShell script
 
 ```powershell
 $rp = Get-FASTSearchMetadataRankProfile -name default

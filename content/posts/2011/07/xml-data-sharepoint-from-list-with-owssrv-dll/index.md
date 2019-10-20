@@ -14,6 +14,7 @@ This cannot be done by simple bindings. This can be done by using code behind an
 1. Set up a view for the SharePoint list that will return all data that you will need. The view has many nice features like choose columns, sorting and filtering.
 2. Instead of adding the connection to the list as a sharepoint library connection, we will instead add it as a XML connection, and point it to a url that will allow us to filter the list. `http://{Site}/_vti_bin/owssvr.dll?Cmd=Display&List={ListGuid}&View={ViewGuid}&XMLDATA=TRUE`
 3. Go back to InfoPath
+
   * Add a new datasource
   * Receive Data
   * XML Document

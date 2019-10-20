@@ -17,7 +17,7 @@ The script generates a report of these fields in a grid. This is done with the c
 <#
     .SYNOPSIS
         Lists all the fields with inline styling.
-        
+
     .NOTES
         Stefan Roks
 #>
@@ -45,9 +45,9 @@ if($result -ne "ok") {
     Exit
 }
 
-$items = Get-ChildItem -Path $item.ProviderPath -Recurse -Language * 
-           | Where-Object { $_.Fields 
-           | Where-Object {$_.Type -eq "Rich Text"} 
+$items = Get-ChildItem -Path $item.ProviderPath -Recurse -Language *
+           | Where-Object { $_.Fields
+           | Where-Object {$_.Type -eq "Rich Text"}
            | Where-Object {$_.Value -like "*style*"} }
 
 

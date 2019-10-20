@@ -10,7 +10,7 @@ updated: 2013-09-27
 
 Once you publish an Web API, it’s set stone. Publishing an API is not a trivial move to do. Users or customers rely on the API not changing after publishing. But however requirements will change always. So there’s a need to evolve the API without breaking existing clients.
 
-## What causes a need to version?
+## What causes a need to version
 
 The reasons to version can be datacontract changes of change of URL. When the datacontract has a change of required fields or when a URL changes i.e. when it changes from theroks.com/api/user?id=435 to theroks.com/api/user/435 this is a change of version.
 

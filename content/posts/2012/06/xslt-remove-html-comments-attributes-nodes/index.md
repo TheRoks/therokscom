@@ -13,7 +13,6 @@ Working on a new SharePoint site, we have to migrate old content to our new Shar
 
 Content migration will be done with the application called Metalogix. This is a very powerful application. It works based on screen scraping. With XPath expressions content can be extracted to sitecolumns. This works like a charm, but when the design and HTML of a site changes, there’s a lot of rubbish in the HTML left behind.
 
-
 ## Inconvenient old HTML
 
 To get clean HTML there’s a possibility to apply a XSL stylesheet to ripped parts of HTML. So what kinds of HTML are rubbish.
@@ -30,7 +29,7 @@ All problems can be solved by writing a XSLT stylesheet. This is the stylesheet 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Remove unwanted attributes or/and nodes -->
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format">
   <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
@@ -48,7 +47,7 @@ All problems can be solved by writing a XSLT stylesheet. This is the stylesheet 
     </xsl:attribute>
    </xsl:template>
 
-   <xsl:template match="@class[.='imageBlock Right']">                
+   <xsl:template match="@class[.='imageBlock Right']">
      <xsl:attribute name="class">
        <xsl:value-of select="'ms-rtePosition-2'"/>
      </xsl:attribute>
@@ -60,7 +59,7 @@ All problems can be solved by writing a XSLT stylesheet. This is the stylesheet 
    <xsl:template match="@class"/><!-- Remove all id_1 attributes -->
    <xsl:template match="@id"/>
    <xsl:template match="@style"/>
-   <xsl:template match="comment()"/>    
+   <xsl:template match="comment()"/>
 
 </xsl:stylesheet>
 ```

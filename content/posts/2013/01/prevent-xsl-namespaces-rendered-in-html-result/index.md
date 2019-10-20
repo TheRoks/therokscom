@@ -19,7 +19,7 @@ This attribute was rendered in HTML that was produced by a Content Query WebPart
 When using a XSLT stylesheet to transform a XML file you can use different XSL namespace to perform several special functions i.e. DateTime functions. Without adding these namespaces in the XSL file the functions won’t work.
 
 ```xml
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="1.0"
  xmlns:x="http://www.w3.org/2001/XMLSchema"
  xmlns:d="http://schemas.microsoft.com/sharepoint/dsp"
  xmlns:cmswrt="http://schemas.microsoft.com/WebParts/v3/Publishing/runtime"
@@ -39,12 +39,13 @@ By just adding the namespace will also result in a namespace in the result. In m
 ```
 
 ## Solution
+
 To prevent the namespace to be rendered in the result we can add an attribute to the stylesheet element. Exclude-result-prefixes.
 
 The value is a white-space-separated list of namespace prefixes. The namespace bound to each of the prefixes is designated as an excluded namespace. The default namespace (as declared by `xmlns`) may be designated as an excluded namespace by `including#default` in the list of namespace prefixes. The designation of a namespace as an excluded namespace is effective within the subtree of the style sheet rooted at the element bearing the `exclude-result-prefixes;` a subtree rooted at an `<xsl:stylesheet>` element does not include any style sheets imported or included by children of that `<xsl:stylesheet>` element.
 
 ```xml
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="1.0"
  exclude-result-prefixes="x d xsl msxsl cmswrt ddwrt"
  xmlns:x="http://www.w3.org/2001/XMLSchema"
  xmlns:d="http://schemas.microsoft.com/sharepoint/dsp"

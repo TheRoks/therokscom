@@ -30,15 +30,15 @@ $site = new-object Microsoft.SharePoint.SPSite($url)
 $cts = $site.rootweb.ContentTypes
 echo "Processing..."
 
-'"CT Name"' + 
-',"CT ID"' + 
-',"CT Description"' + 
+'"CT Name"' +
+',"CT ID"' +
+',"CT Description"' +
 ',"CT Group"' +
-',"Field Title"' + 
-',"Field Internal Name"' + 
-',"Field ID"' + 
-',"Field Group"' + 
-',"Field Max Length"' + 
+',"Field Title"' +
+',"Field Internal Name"' +
+',"Field ID"' +
+',"Field Group"' +
+',"Field Max Length"' +
 ',"Field Description"' | Out-File -out
 
 ForEach ($id in $cts)

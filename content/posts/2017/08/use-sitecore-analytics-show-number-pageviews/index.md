@@ -41,9 +41,9 @@ public class VisitsQuery : ItemBasedReportingQuery
    : base(ItemVisits, reportProvider)
   {
   }
-  public ID ItemId { get; set; } 
-  public int Timespan { get; set; } 
-  public long Visits { get; protected set; } 
+  public ID ItemId { get; set; }
+  public int Timespan { get; set; }
+  public long Visits { get; protected set; }
 
   public override void Execute()
   {

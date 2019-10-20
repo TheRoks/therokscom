@@ -56,7 +56,7 @@ Next thing you have to do is to the this code executed. This can be done by usin
 <browser refID="default">
 <controlAdapters>
   <adapter controlType="System.Web.UI.WebControls.WebParts.WebPartZone"
-    adapterType="TheRoks.DemoControlAdapters.WebPartZoneControlAdapter,     TheRoks.DemoControlAdapters, 
+    adapterType="TheRoks.DemoControlAdapters.WebPartZoneControlAdapter, TheRoks.DemoControlAdapters,
     Version=1.0.0.0, Culture=neutral, PublicKeyToken=dd6b429e07b7058f" />
   </controlAdapters>
 </browser>

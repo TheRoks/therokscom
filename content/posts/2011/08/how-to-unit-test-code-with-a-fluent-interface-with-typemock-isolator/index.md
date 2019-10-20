@@ -12,7 +12,7 @@ Recently I was asked to write a unit test for some code that had a fluent interf
 
 Let’s say you have class like this:
 
-```csharp 
+```csharp
 public class CommandBuilder : ICommandBuilder
 {
   private string name;
@@ -37,7 +37,7 @@ public interface ICommandBuilder
   ICommandBuilder AddParam(string name, string value);
 }
 ```
- 
+
 That’s called by a repository like this:
 
 ```csharp
@@ -65,7 +65,7 @@ If the implementation of your fluent interface enforces the method calls in a ce
 public void MakeDbCallMethodOrderImportant()
 {
    // Arrange
-   CommandBuilder fakeBuilder = 
+   CommandBuilder fakeBuilder =
      Isolate.Fake.Instance<CommandBuilder();
    Isolate.Swap.NextInstance().With(fakeBuilder);
    Isolate.WhenCalled(() => fakeBuilder

@@ -31,7 +31,7 @@ End Sub
 
 Open the keyboard mappings dialog, you can find it under: “Tools –> Options –> Environment -> Keyboard”.
 
-Ikeyboardn the “Show commands containing” textbox, start typing MyMacros. The new created Macros should appears.
+Ikeyboard the “Show commands containing” textbox, start typing MyMacros. The new created Macros should appears.
 
 Activate the “Press shortcut keys” textbox, by clicking in it. Then choose the shortcut you want to use, just by pressing the key-combination you prefer. I used “ALT + G”.
 

@@ -53,9 +53,9 @@ byte[] byteArray = RetreiveBytes();
 // Clear all content output from the buffer stream
 Response.Clear();
 // for the browser's download dialog
-Response.AddHeader("Content-Disposition", 
+Response.AddHeader("Content-Disposition",
                    "attachment; filename=export.zip");
-// Add a HTTP header to the output stream that contains the 
+// Add a HTTP header to the output stream that contains the
 Response.AddHeader("Content-Length",
                    byteArray.Length.ToString());
 // Set the HTTP MIME type of the output stream
