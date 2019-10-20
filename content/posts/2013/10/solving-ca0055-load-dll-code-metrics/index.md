@@ -2,7 +2,7 @@
 title: "Solving: CA0055 Could Not Load dll in Code Metrics"
 path: "/solving-ca0055-load-dll-code-metrics/"
 tags: ["dotNET"]
-excerpt: "Recent in my project we had a problem with a TFS build when calculating the code metrics of the code. The error we ran into was the CA0055 Could not load file. Searching on the internet gave me some hints but not the solution in my case."
+excerpt: "Solving CA0055 Could not Load dll. This error occurs when a dll could not be found or referenced assembly can not be load or found."
 created: 2013-10-20
 updated: 2013-10-20
 ---

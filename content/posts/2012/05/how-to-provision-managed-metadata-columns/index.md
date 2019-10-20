@@ -2,7 +2,7 @@
 title: "How to provision Managed Metadata columns"
 path: "/how-to-provision-managed-metadata-columns/"
 tags: ["SharePoint"]
-excerpt: "This post will show you how to provision Site Columns that uses Managed Metadata in SharePoint 2010. Managed Metadata is one of the new and exciting features of SharePoint Server 2010. It allows you to centrally manage metadata terms and keywords."
+excerpt: "This post will show you how to provision Site Columns that uses Managed Metadata in SharePoint 2010 with a custom activation feature."
 created: 2012-05-06
 updated: 2012-05-06
 ---

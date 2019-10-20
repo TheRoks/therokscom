@@ -2,7 +2,7 @@
 title: "Custom Error/Message Application Pages in SharePoint 2010"
 path: "/custom-error-message-application-pages-in-sharepoint-2010/"
 tags: ["SharePoint"]
-excerpt: "In SharePoint 2010 it is possible to replace several application pages. This are: AccessDenied , Confirmation, Error, Login, RequestAccess, Signout, WebDeleted. This can be done in two ways. By using a eventreceiver or a Powershell script."
+excerpt: "Create a custom page that replaces a SharePoint application page. AccessDenied, Confirmation, Error, Login, RequestAccess, Signout, WebDeleted"
 created: 2011-09-16
 updated: 2011-09-16
 ---

@@ -2,7 +2,7 @@
 title: "Social login with OWIN Authentication in MVC5"
 path: "/social-login-owin-authentication-mvc5/"
 tags: ["dotNET"]
-excerpt: "MVC5 came with some really nice stuff. In this blog post I’ll dig into the authentication with external logins as Microsoft calls them. We call them often social logins. The way this is done is quite different than in MVC4. Where MVC4 depended on webmatrix MVC5 makes use of OWIN security"
+excerpt: "This post shows how you can extract more information from social logins by reading the claim values from the social networks like Facebook."
 created: 2013-11-09
 updated: 2013-11-09
 ---

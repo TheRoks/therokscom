@@ -2,7 +2,7 @@
 title: "Running E2E tests for AngularJS based applications with Protractor"
 path: "/running-e2e-tests-angularjs-based-applications-protractor/"
 tags: ["AngularJS"]
-excerpt: "Writing e2e can be very valuable when developing clientside based web app’s. The de facto standard for writing e2e is protractor. This is since the introduction of AngularJS v1.2. The AngularJS team switched from Karma (aka scenario runner) to Protractor, Karma was used as the default e2e runner."
+excerpt: "A brief description on how to run end to end test for AngularJS based applications with Protractor"
 created: 2014-04-07
 updated: 2014-04-07
 ---

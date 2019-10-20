@@ -2,7 +2,7 @@
 title: "When to call EnsureChildControls in custom controls"
 path: "/when-to-call-ensurechildcontrols/"
 tags: ["dotNET"]
-excerpt: "Should I call EnsureChildControls in code?"
+excerpt: "When to call EnsureChildControls. With reverse enginering EnsureChildControls and CreateChildControls methods of the .NET Framework."
 created: 2012-02-05
 updated: 2012-02-05
 ---

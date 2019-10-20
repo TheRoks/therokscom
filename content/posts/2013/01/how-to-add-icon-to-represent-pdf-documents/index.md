@@ -2,7 +2,7 @@
 title: "How to add icon to represent PDF documents"
 path: "/how-to-add-icon-to-represent-pdf-documents/"
 tags: ["SharePoint"]
-excerpt: "We have a website with a lot of PDF documents. In content hyperlinks are made to these documents. The design that is given us, says we need to show a PDF icon in front the hyperlink. SharePoint has an option with hyperlinks to show a pictogram in front of a hyperlink. But there’s no default support for PDF icons. I’ll show how to add the PDF icon."
+excerpt: "How to add an icon to SharePoint 2010 to represent Adobe PDF documents that are stored in document libraries. See how with the DocIcon.xml"
 created: 2013-01-18
 updated: 2013-01-18
 ---

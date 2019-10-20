@@ -2,13 +2,13 @@
 title: "Dynamically add an icon on new window links"
 path: "/dynamically-add-an-icon-on-new-window-links/"
 tags: ["jQuery"]
-excerpt: "A common feature on sites and wikis is the “open in new window” icon. It’s not very good idea for several reason to put them al over the HTML, they’re a greate candidate for using progressive enhancement."
+excerpt: "Dynamically add a new window icon to a hyperlink with jQuery. See here how this can be done with just a few lines of code."
 created: 2012-05-09
 updated: 2012-05-09
 ---
 
 
-A common feature on sites and wikis is the “open in new window” icon. It’s not very good idea for several reason to put them al over the HTML, they’re a greate candidate for using progressive enhancement. In our case, we can use jQuery to add the images pretty easily.
+A common feature on sites and wikis is the “open in new window” icon. It’s not very good idea for several reason to put them al over the HTML, they’re a create candidate for using progressive enhancement. In our case, we can use jQuery to add the images pretty easily.
 
 ## Use the jQuery selectors
 

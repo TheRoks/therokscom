@@ -2,7 +2,7 @@
 title: "SharePoint search core results web part"
 path: "/show-raw-xml-sharepoint-search-core-results-web-part/"
 tags: ["SharePoint"]
-excerpt: "Developing a custom xslt for the search core results web part can be hard. It’s very helpfull to have xml to test it on. To view the raw xml use this xsl in SharePoint Enterprise Search."
+excerpt: "The search core results web part in SharePoint Enterprise Search is able to show raw xml with a simple piece of xslt. See here how to."
 created: 2011-06-11
 updated: 2011-06-11
 ---

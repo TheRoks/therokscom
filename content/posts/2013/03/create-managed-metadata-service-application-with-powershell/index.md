@@ -2,7 +2,7 @@
 title: "Create Managed Metadata Service Application with Powershell"
 path: "/create-managed-metadata-service-application-with-powershell/"
 tags: ["SharePoint"]
-excerpt: Managed metadata service applications are administered from within SharePoint Central Administration, where you get an overview of all available service applications. But everything over there can also be done in Powershell i.e. creating a Managed Metadata Service Application.
+excerpt: "Configuring Managed Metadata Navigation for SharePoint 2010 libraries. This blogpost shows in a few simple steps how to setup this kind of navigation."
 created: 2013-03-08
 updated: 2013-03-08
 ---

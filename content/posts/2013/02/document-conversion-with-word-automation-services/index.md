@@ -2,7 +2,7 @@
 title: "Document Conversion with Word Automation Services"
 path: "/document-conversion-with-word-automation-services/"
 tags: ["SharePoint"]
-excerpt: "When you need to convert documents, like Word documents to PDF or XPS in SharePoint 2010 we can use the service application: Word Automation services."
+excerpt: "Word Automation Services Service Application in SharePoint 2010 enables you to convert documents between type. i.e. Conversions from Word 2010 to PDF."
 created: 2013-02-15
 updated: 2013-02-15
 ---

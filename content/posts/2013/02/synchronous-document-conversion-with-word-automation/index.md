@@ -2,7 +2,7 @@
 title: "Synchronous document conversion with Word automation"
 path: "/synchronous-document-conversion-with-word-automation/"
 tags: ["SharePoint"]
-excerpt: "In a previous post I explained about Word Automation Services in SharePoint 2010. It worked and the converted files were of a good quality. However there was still some space for improvements. I’ll show what changed in SharePoint 13 in the Word Automation Services."
+excerpt: "Synchronous document conversion with Word Automation Services in SharePoint 2013. This post show what's new in SharePoint 2013."
 created: 2013-02-22
 updated: 2013-02-22
 ---

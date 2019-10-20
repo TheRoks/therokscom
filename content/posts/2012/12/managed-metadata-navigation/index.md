@@ -2,7 +2,7 @@
 title: "Managed Metadata Navigation"
 path: "/managed-metadata-navigation/"
 tags: ["SharePoint"]
-excerpt: "Managed metadata is a hierarchical collection of centrally managed terms that you can define, and then use as attributes for items."
+excerpt: "Use Powershell to create a Managed Metadata ServiceApplication. In this post is a sample Powershell script shown to create the SSA."
 created: 2012-12-22
 updated: 2012-12-22
 ---

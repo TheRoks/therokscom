@@ -2,7 +2,7 @@
 title: "List all installed features that are not active with Powershell"
 path: "/list-all-installed-features-that-are-not-active-with-powershell/"
 tags: ["SharePoint"]
-excerpt: "Powershell script to automatic deploy SharePoint solutions. However when activating features that were already active an error occurs."
+excerpt: "List all installed features that are not active features with Powershell. See in this post how this can be done with a small script."
 created: 2011-03-15
 updated: 2011-03-15
 ---

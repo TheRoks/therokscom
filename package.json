@@ -28,13 +28,13 @@
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "1.x",
-    "gatsby": "^2.13.55",
+    "gatsby": "^2.16.5",
     "gatsby-plugin-google-analytics": "^2.1.20",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sitemap": "^2.2.17",
     "gatsby-theme": "^0.0.6",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-sharingbuttons": "^1.0.0",
     "read-time-estimate": "^0.0.2"
   }

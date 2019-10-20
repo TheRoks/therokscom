@@ -2,7 +2,7 @@
 title: "Create Ranking profile with FAST for SharePoint 2010"
 path: "/ranking-profile-fast-for-sharepoint/"
 tags: ["SharePoint"]
-excerpt: "When working on a SharePoint 2010 project search was done by using FAST for SharePoint. the FAST search engine is much more advanced than the enterprise search that comes with SharePoint. FAST for SharePoint will visually fully integrate with SharePoint. Maintenance will be done in the Central Administration. When the Central Administration is not enough PowerShell is there to rescue."
+excerpt: "ow to create a ranking profile in FAST for SharePoint 2010. A short description how this can be done. Ranking profiles can be customized."
 created: 2011-03-29
 updated: 2011-03-29
 ---

@@ -2,7 +2,7 @@
 title: "Using the XmlSerializer in multithreaded applications"
 path: "/using-the-xmlserializer-in-multithreaded-applications/"
 tags: ["dotNET"]
-excerpt: "The XmlSerializer can cause serious problems in multithreaded environments."
+excerpt: "Solving multithread and memory issues with the XMLSerializer by using a singleton pattern and the XMLSerializerFactory."
 created: 2011-02-12
 updated: 2011-02-12
 ---
