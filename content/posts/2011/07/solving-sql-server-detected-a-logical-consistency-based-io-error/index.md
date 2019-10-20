@@ -1,6 +1,6 @@
 ---
 title: "Solving: SQL Server detected a logical consistency-based I/O error"
-path: "/solving-sql-server-detected-a-logical-consistency-based-io-error"
+path: "/solving-sql-server-detected-a-logical-consistency-based-io-error/"
 tags: ["SharePoint"]
 excerpt: "When creating a new Secure Store Service Application in SharePoint 2010 I had this error:
 Creation of Secure Store Service Application SecureStoreService failed because of the following errors: SQL Server detected a logical consistency-based I/O error: unable to decrypt page due to missing DEK."

@@ -1,6 +1,6 @@
 ---
 title: "XML data from SharePoint list with owssrv.dll"
-path: "/xml-data-sharepoint-from-list-with-owssrv-dll"
+path: "/xml-data-sharepoint-from-list-with-owssrv-dll/"
 tags: ["SharePoint"]
 excerpt: "While working on a project I needed to create a InfoPath form a nested repeated table that will be filled with data from a SharePoint list."
 created: 2011-07-20

@@ -1,6 +1,6 @@
 ---
 title: "Best practices to version Web API"
-path: "/best-practices-version-web-api"
+path: "/best-practices-version-web-api/"
 tags: ["dotNET"]
 excerpt: Once you publish an Web API, it’s set stone. Publishing an API is not a trivial move to do. Users or customers rely on the API not changing after publishing. But however requirements will change always. So there’s a need to evolve the API without breaking existing clients.
 created: 2013-09-27

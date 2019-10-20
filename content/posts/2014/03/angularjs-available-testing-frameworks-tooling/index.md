@@ -1,6 +1,6 @@
 ---
 title: "AngularJS available testing frameworks and tooling"
-path: "/angularjs-available-testing-frameworks-tooling"
+path: "/angularjs-available-testing-frameworks-tooling/"
 tags: ["AngularJS"]
 excerpt: Lessons learned from mixins, render props, HOCs, and classes.
 featuredImage: "./javascript-tools-frameworks.png"

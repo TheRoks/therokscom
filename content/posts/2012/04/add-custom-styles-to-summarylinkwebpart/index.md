@@ -1,6 +1,6 @@
 ---
 title: "Add custom styles to SummaryLinkWebPart"
-path: "/add-custom-styles-to-summarylinkwebpart"
+path: "/add-custom-styles-to-summarylinkwebpart/"
 tags: ["SharePoint"]
 excerpt: The SummaryLinkWebPart has many styles in it, but if you need to brand it to your company’s then you can add custom styles.
 created: 2012-04-15

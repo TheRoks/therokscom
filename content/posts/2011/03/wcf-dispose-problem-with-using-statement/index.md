@@ -1,6 +1,6 @@
 ---
 title: "WCF Dispose problem with using statement"
-path: "wcf-dispose-problem-with-using-statement"
+path: "/wcf-dispose-problem-with-using-statement/"
 tags: ["dotNET"]
 excerpt: "WCF client cannot be used inside a Using block because they may unexpectedly throw an exception. Even if you catch the exception, it is possible that a connection will be left open."
 created: 2011-03-11

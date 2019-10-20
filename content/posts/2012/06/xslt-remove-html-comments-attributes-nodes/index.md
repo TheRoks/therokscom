@@ -1,6 +1,6 @@
 ---
 title: "XSLT remove HTML comments / attributes / nodes"
-path: "/xslt-remove-html-comments-attributes-nodes"
+path: "/xslt-remove-html-comments-attributes-nodes/"
 tags: ["SharePoint"]
 excerpt: "Working on a new SharePoint site, we have to migrate old content to our new SharePoint. The old site was built in Tridion. To clean up HTML, the use of XSLT nifty way to clean things up."
 created: 2012-06-27

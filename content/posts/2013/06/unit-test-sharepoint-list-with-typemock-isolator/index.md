@@ -1,6 +1,6 @@
 ---
 title: "Unit test SharePoint list with TypeMock Isolator"
-path: "/unit-test-sharepoint-list-with-typemock-isolator"
+path: "/unit-test-sharepoint-list-with-typemock-isolator/"
 tags: ["SharePoint"]
 excerpt: "Testing your code can be a time consuming business with SharePoint. You’ll to F5 Build. Deploy, And test. This cycle is extremely slow and you don’t want to do this often. Then there’s unit testing. But SharePoint is a complex system. It needs loads of infrastructure to get anywhere. The best to speed up is to get rid of SharePoint when testing your code."
 created: 2013-06-25

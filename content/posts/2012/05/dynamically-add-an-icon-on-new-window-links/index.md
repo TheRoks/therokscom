@@ -1,6 +1,6 @@
 ---
 title: "Dynamically add an icon on new window links"
-path: "/dynamically-add-an-icon-on-new-window-links"
+path: "/dynamically-add-an-icon-on-new-window-links/"
 tags: ["jQuery"]
 excerpt: "A common feature on sites and wikis is the “open in new window” icon. It’s not very good idea for several reason to put them al over the HTML, they’re a greate candidate for using progressive enhancement."
 created: 2012-05-09

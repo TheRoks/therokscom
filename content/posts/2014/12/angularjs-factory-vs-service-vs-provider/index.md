@@ -1,6 +1,6 @@
 ---
 title: "AngularJS: Factory vs Service vs Provider"
-path: "/angularjs-factory-vs-service-vs-provider"
+path: "/angularjs-factory-vs-service-vs-provider/"
 tags: ["AngularJS"]
 excerpt: To try to get my head around the differences of the factory’s, services and provider in AngularJS. This can be all very similar on first sight. However there are some differences between the three of them. I’ll try to explain how they work and which to choose when.
 created: 2014-12-27

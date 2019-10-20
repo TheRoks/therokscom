@@ -1,6 +1,6 @@
 ---
 title: "Invalid postback or callback argument. Event validation is enabled"
-path: "/invalid-postback-or-callback-argument-event-validation-is-enabled"
+path: "/invalid-postback-or-callback-argument-event-validation-is-enabled/"
 tags: ["SharePoint"]
 excerpt: "I wrote web part that uses Repeater control to create some repeating blocks of output. Each of these blocks has Button control in it. When I ran web part under SharePoint I got the following error: Invalid postback or callback argument."
 created: 2011-08-21

@@ -1,6 +1,6 @@
 ---
 title: "Custom asset picker with Enhanced URLField"
-path: "/custom-asset-picker-with-enhanced-urlfield"
+path: "/custom-asset-picker-with-enhanced-urlfield/"
 tags: ["SharePoint"]
 excerpt: Working on a SharePoint 2010 WCM site I had the requirement to deliver a more content editor friendly SharePoint. Especially when it becomes to url fields. Content editors are asked to copy-paste urls in SharePoints out-of-the-box url fields. In contrast to the Publishing Content Field, the url field does not come with an asset picker.
 created: 2012-09-26

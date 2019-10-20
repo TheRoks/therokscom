@@ -1,10 +1,10 @@
 ---
 title: "List all the rich text fields with inline styling in Sitecore with Powershell Extensions"
-path: "/list-all-the-rich-text-fields-with-inline-styling-in-sitecore-with-powershell-extensions"
+path: "/list-all-the-rich-text-fields-with-inline-styling-in-sitecore-with-powershell-extensions/"
 tags: ["Sitecore"]
 excerpt: "In our project we agreed that content editors do not use inline styling in Rich Text Fields. We did not make it impossible in the Rich Text Editor of Sitecore to use it. This can be done, but for several reasons we didn’t do this (yet)."
 created: 2018-12-12
-updated: 2011-12-12
+updated: 2018-12-12
 ---
 
 In our project we agreed that content editors do not use inline styling in Rich Text Fields. We did not make it impossible in the Rich Text Editor of Sitecore to use it. This can be done, but for several reasons we didn't do this (yet).

@@ -1,6 +1,6 @@
 ---
 title: "Efficient building a monorepo on Azure DevOps"
-path: "/efficient-building-a-monorepo-on-azure-devops"
+path: "/efficient-building-a-monorepo-on-azure-devops/"
 tags: ["DevOps"]
 excerpt: Optimize a build process in a monorepo in Azure DevOps using all new features like Yaml pipelines, Pipeline Artifacts, Cache Beta and Azure's Rest API.
 created: 2019-10-13
