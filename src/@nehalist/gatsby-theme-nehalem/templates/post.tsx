@@ -9,7 +9,7 @@ import ReadingProgress from "@nehalist/gatsby-theme-nehalem/src/components/readi
 import { theme } from "../styles/theme";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import slugify from "slugify";
-import Bio from "@nehalist/gatsby-theme-nehalem/src/components/bio";
+import Bio from "../components/bio";
 import Comments from "@nehalist/gatsby-theme-nehalem/src/components/comments";
 import SEO from "@nehalist/gatsby-theme-nehalem/src/components/seo";
 import { FaAlignJustify, FaTimes } from "react-icons/fa";

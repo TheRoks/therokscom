@@ -35,6 +35,8 @@ module.exports = {
         youtube: ``,
         github: `https://github.com/theroks`,
         twitch: ``,
+        stackoverflow: `https://stackoverflow.com/users/12258906/stefan-roks`,
+        rss: `https://feeds.feedburner.com/theroks`,
       },
     },
   },
