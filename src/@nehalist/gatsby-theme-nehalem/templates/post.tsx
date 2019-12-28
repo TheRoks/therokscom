@@ -36,7 +36,7 @@ const PostContainer = styled(Container)`
 const LeftSidebar = styled.div<{ show?: boolean }>`
   min-width: 255px;
   max-width: 225px;
-  transition: opacity 0.5s;
+ transition: opacity 0.5s;
 
   @media (max-width: ${theme.breakpoints.xl}) {
     position: fixed;
@@ -190,7 +190,6 @@ const PostTitle = styled.h1`
 `;
 
 const PostFooter = styled.footer`
-  background-color: #fafafa;
   font-size: 0.8em;
   color: #666;
   padding: 40px;
@@ -208,9 +207,6 @@ const FooterTagLink = styled(Link)`
 `;
 
 const PostAddition = styled.section`
-  background-color: #fff;
-  border-top: 1px #e5eff5 solid;
-  border-bottom: 1px #e5eff5 solid;
   z-index: 700;
   position: relative;
   padding: 40px;

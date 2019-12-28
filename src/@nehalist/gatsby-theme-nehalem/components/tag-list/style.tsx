@@ -3,9 +3,6 @@ import Theme, { theme } from "../../styles/theme";
 import { Link } from "gatsby";
 
 export const TagContainer = styled.section`
-  background-color: #fff;
-  border-top: 1px #e5eff5 solid;
-  border-bottom: 1px #e5eff5 solid;
   padding: 40px;
   margin-top: 75px;
   text-align: center;
