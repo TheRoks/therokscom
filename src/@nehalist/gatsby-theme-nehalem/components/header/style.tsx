@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
   height: 200px;
 
   @media (max-width: ${theme.breakpoints.sm}) {
-    height: 30vh;
+    height: 20vh;
   }
 `;
 
@@ -32,9 +32,9 @@ export const TitleWrapper = styled.div`
 export const Title = styled.h1`
   display: block;
   font-size: ${theme.fontSizes[3]}px;
-  text-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  text-shadow: 0 5px 18px rgba(0, 0, 0, 0.57);
 
-  color: ${theme.colors.black09};
+  color: ${theme.colors.black07};
 
   @media (max-width: ${theme.breakpoints.sm}) {
     font-size: 10vmin;

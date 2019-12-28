@@ -1,12 +1,13 @@
 const fontSizes = [16, 24, 48, 64];
 
 const colors = {
-  primary: "#37a7c4", // near-Moonstone
-  secondary: "#555555", // Davy's grey
-  secondaryDarker: "#197559", // near-Salem
-  smokyBlack: "#000000", // black
-  snow: "#F7F7F7", // near-Guyabano
+  primary: "#9e9e9e", 
+  secondary: "#707070",
+  secondaryDarker: "#000000",
+  smokyBlack: "#000000",
+  snow: "#fafafa",
   black09: "rgba(25, 10, 0, 0.9)",
+  black07: "rgba(25, 10, 0, 0.7)",
   shadow: "rgba(0, 0, 0, 0.09)",
 };
 
@@ -27,7 +28,7 @@ export const theme = {
   },
   fonts: {
     base:
-      `system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, ` +
+      `Montserrat, Roboto, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, ` +
       `Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
   },
   components: {

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "TheRoks",
+    title: "theroks.com",
     siteUrl: "https://theroks.com",
     twitterHandle: "@theroks",
     url: "https://theroks.com",
@@ -102,6 +102,21 @@ module.exports = {
           display: `minimal-ui`,
           icon: `${__dirname}/content/assets/images/icon.png`,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`regular`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`]
+          },
+        ],
       },
     },
     {
