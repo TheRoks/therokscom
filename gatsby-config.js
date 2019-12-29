@@ -112,10 +112,6 @@ module.exports = {
             family: `Montserrat`,
             variants: [`regular`]
           },
-          {
-            family: `Roboto`,
-            subsets: [`latin`]
-          },
         ],
       },
     },

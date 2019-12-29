@@ -28,7 +28,7 @@ export const theme = {
   },
   fonts: {
     base:
-      `Montserrat, Roboto, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, ` +
+      `Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, ` +
       `Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
   },
   components: {
