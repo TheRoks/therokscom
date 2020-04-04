@@ -13,18 +13,13 @@ import Bio from "../components/bio";
 import Comments from "@nehalist/gatsby-theme-nehalem/src/components/comments";
 import SEO from "@nehalist/gatsby-theme-nehalem/src/components/seo";
 import { FaAlignJustify, FaTimes } from "react-icons/fa";
-import readTimeEstimate from "read-time-estimate";
-import { SiteMetadata } from "../utils/models";
-import { Facebook, Twitter } from "react-sharingbuttons";
-import "react-sharingbuttons/dist/main.css";
-import { TimeToRead } from "../../../components/TimeToRead";
 
 interface PostTemplateProps {
-  data: {
-    primaryTag: Tag | null;
-    post: Post;
-  };
   location: Location;
+    pageContext: {
+      post: Post;
+      primaryTag: Tag;
+    }
 }
 
 const PostContainer = styled(Container)`
@@ -267,28 +262,12 @@ const ShareButtons = styled.div`
   }
 `;
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = ({
-  data,
-  location,
-}) => {
+const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) => {
   const [showToc, setShowToc] = useState<boolean>(false);
-  const post = data.post;
-  const readingProgressRef = createRef<HTMLElement>();
-  const primaryTag = data.primaryTag;
-  const toggleToc = () => setShowToc(!showToc);
-
-  const metadata = useStaticQuery<SiteMetadata>(graphql`
-    query MetadataQuery2 {
-      site {
-        siteMetadata {
-          siteUrl
-          twitterHandle
-        }
-      }
-    }
-  `);
-
-  const twitterHandle = metadata.site.siteMetadata.twitterHandle;
+  const post                  = data.post;
+  const readingProgressRef    = createRef<HTMLElement>();
+  const primaryTag            = data.primaryTag;
+  const toggleToc             = () => setShowToc(!showToc);
 
   return (
     <Layout bigHeader={false}>
@@ -299,114 +278,59 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
         updatedAt={post.frontmatter.updated}
         tags={post.frontmatter.tags}
         description={post.frontmatter.excerpt}
-        image={
-          post.frontmatter.featuredImage
-            ? post.frontmatter.featuredImage.childImageSharp.sizes.src
-            : null
-        }
+        image={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.sizes.src : null}
       />
-      <ReadingProgress
-        target={readingProgressRef}
-        color={primaryTag ? primaryTag.color : undefined}
-      />
+      <ReadingProgress target={readingProgressRef} color={primaryTag ? primaryTag.color : undefined}/>
       <PostContainer>
-        {post.headings.find(h => h.depth > 1) && (
-          <>
+        {post.headings.find(h => h.depth > 1) &&
+        <>
             <LeftSidebar show={showToc}>
-              <TocWrapper>
-                <Toc onClick={toggleToc} />
-              </TocWrapper>
+                <TocWrapper>
+                    <Toc onClick={toggleToc}/>
+                </TocWrapper>
             </LeftSidebar>
             <ToggleTocButton
-              role="button"
-              aria-label="Toggle table of contents"
-              onClick={toggleToc}
+                role={`button`}
+                aria-label={`Toggle table of contents`}
+                onClick={toggleToc}
             >
-              {showToc ? <FaTimes /> : <FaAlignJustify />}
+              {showToc ? <FaTimes/> : <FaAlignJustify/>}
             </ToggleTocButton>
-          </>
-        )}
+        </>
+        }
         <PostContent>
           <article className={`post`} ref={readingProgressRef}>
             <PostHeader>
               <PostMeta>
-                <span>
-                  <span>
-                    {post.frontmatter.tags.length > 0 &&
-                      post.frontmatter.tags.map((tag, i) => (
-                        <StyledLink
-                          key={i}
-                          to={`/tag/${slugify(tag, {
-                            lower: true,
-                          })}`}
-                        >
-                          {tag}
-                          {post.frontmatter.tags.length > i + 1 && <>, </>}
-                        </StyledLink>
-                      ))}
-                  </span>
-                </span>
-                <time dateTime={post.frontmatter.created}>
-                  {post.frontmatter.createdPretty}
-                </time>
+                {post.frontmatter.tags.length > 0 &&
+                <Link to={`/tag/${slugify(post.frontmatter.tags[0], {lower: true})}`}>{post.frontmatter.tags[0]}</Link>
+                }
+                <time dateTime={post.frontmatter.created}>{post.frontmatter.createdPretty}</time>
               </PostMeta>
               <PostTitle>{post.frontmatter.title}</PostTitle>
-              <TimeToRead
-                fontsize="0.9em"
-                duration={readTimeEstimate(post.html).duration}
-              />
             </PostHeader>
-            {post.frontmatter.featuredImage && (
-              <FeaturedImage
-                sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-              />
-            )}
-            <StyledPost
-              hasImage={post.frontmatter.featuredImage}
-              dangerouslySetInnerHTML={{ __html: post.html }}
-              className="post"
-            />
-            <ShareButtons>
-              <Twitter
-                text="Tweet"
-                shareText={`${post.frontmatter.title} by ${twitterHandle} ${
-                  metadata.site.siteMetadata.siteUrl
-                }${post.frontmatter.path}?utm_source=${post.frontmatter.title}&utm_medium=twitter&utm_campaign=twitter ${post.frontmatter.tags
-                  .map(tag => `#${tag}`)
-                  .join(" ")}
-                `}
-              />
-              <Facebook
-                text="Share"
-                url={metadata.site.siteMetadata.siteUrl + post.frontmatter.path}
-              />
-            </ShareButtons>
+            {post.frontmatter.featuredImage &&
+            <FeaturedImage sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+            }
+            <StyledPost dangerouslySetInnerHTML={{__html: post.html}} className={`post`}/>
             <PostFooter>
               <p>
                 Published under&nbsp;
                 {post.frontmatter.tags.map((tag, index) => (
                   <span key={index}>
-                    <FooterTagLink to={`/tag/${slugify(tag, { lower: true })}`}>
+                    <FooterTagLink
+                      to={`/tag/${slugify(tag, {lower: true})}`}
+                    >
                       {tag}
                     </FooterTagLink>
                     {post.frontmatter.tags.length > index + 1 && <>, </>}
                   </span>
                 ))}
-                &nbsp;on{" "}
-                <time dateTime={post.frontmatter.created}>
-                  {post.frontmatter.createdPretty}
-                </time>
-                .
+                &nbsp;on <time dateTime={post.frontmatter.created}>{post.frontmatter.createdPretty}</time>.
               </p>
-              {post.frontmatter.updated !== post.frontmatter.created && (
-                <p>
-                  Last updated on{" "}
-                  <time dateTime={post.frontmatter.updated}>
-                    {post.frontmatter.updatedPretty}
-                  </time>
-                  .
-                </p>
-              )}
+              {post.frontmatter.updated !== post.frontmatter.created &&
+              <p>Last updated on <time dateTime={post.frontmatter.updated}>{post.frontmatter.updatedPretty}</time>.</p>
+              }
             </PostFooter>
           </article>
         </PostContent>
@@ -414,13 +338,47 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
       <PostAddition>
         <PostAdditionContent>
           <BioWrapper>
-            <Bio textAlign={`center`} showName={true} />
+            <Bio textAlign={`center`} showName={true}/>
           </BioWrapper>
         </PostAdditionContent>
       </PostAddition>
-      <Comments />
+      <Comments/>
     </Layout>
   );
 };
 
 export default PostTemplate;
+
+export const query = graphql`
+  query primaryTagAndPrimaryTag($postId: String!, $primaryTag: String!) {
+    post: markdownRemark(
+      id: { eq: $postId }
+    ) {
+      headings {
+        depth
+      }
+      frontmatter {
+        title
+        path
+        tags
+        excerpt
+        created
+        createdPretty: created(formatString: "DD MMMM, YYYY")
+        updated
+        updatedPretty: updated(formatString: "DD MMMM, YYYY")
+        featuredImage {
+          childImageSharp {
+            sizes(maxWidth: 800, quality: 75) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+      html
+    }
+    primaryTag: tags(name: { eq: $primaryTag }) {
+      name
+      color
+    }
+  }
+`;
