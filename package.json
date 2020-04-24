@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test:lh:ci": "lhci collect --numberOfRuns=1 --start-server-command='yarn serve' --settings.chromeFlags='--no-sandbox'"
   },
   "dependencies": {
     "@nehalist/gatsby-theme-nehalem": "^1.0.8",
@@ -30,6 +31,7 @@
     "eslint-plugin-react-hooks": "3.0.0",
     "gatsby": "^2.20.12",
     "gatsby-plugin-google-analytics": "^2.1.20",
+    "gatsby-plugin-preconnect": "^1.1.7",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sitemap": "^2.2.17",
@@ -38,5 +40,8 @@
     "react-dom": "^16.13.1",
     "react-sharingbuttons": "^1.0.0",
     "read-time-estimate": "^0.0.2"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.3.13"
   }
 }

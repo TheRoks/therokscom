@@ -4,24 +4,23 @@ module.exports = {
     siteUrl: "https://theroks.com",
     twitterHandle: "@theroks",
     url: "https://theroks.com",
-    description:
-      "Thoughts on Microsoft .NET and related stuff",
+    description: "Thoughts on Microsoft .NET and related stuff",
     topics: [],
     menu: [
       {
         name: "Home",
-        path: "/",
+        path: "/"
       },
       {
         name: "Sitecore",
-        path: "/tag/sitecore",
-      },
+        path: "/tag/sitecore"
+      }
     ],
     footerMenu: [
       {
         name: "Rss Feed",
-        path: "https://feeds.feedburner.com/theroks",
-      },
+        path: "https://feeds.feedburner.com/theroks"
+      }
     ],
     search: true,
     author: {
@@ -36,30 +35,37 @@ module.exports = {
         github: `https://github.com/theroks`,
         twitch: ``,
         stackoverflow: `https://stackoverflow.com/users/12258906/stefan-roks`,
-        rss: `https://feeds.feedburner.com/theroks`,
-      },
-    },
+        rss: `https://feeds.feedburner.com/theroks`
+      }
+    }
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-20164906-1",
-      },
+        trackingId: "UA-20164906-1"
+      }
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://theroks.com',
-        sitemap: 'https://theroks.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        host: "https://theroks.com",
+        sitemap: "https://theroks.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }]
       }
     },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: ["/404/", "/archive", "/tags", "404.html", "/tag/*", "/dev-404-page/"],
+        exclude: [
+          "/404/",
+          "/archive",
+          "/tags",
+          "404.html",
+          "/tag/*",
+          "/dev-404-page/"
+        ],
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
@@ -84,11 +90,11 @@ module.exports = {
             return {
               url: site.siteMetadata.siteUrl + edge.node.path,
               changefreq: `daily`,
-              priority: 0.7,
-            }
+              priority: 0.7
+            };
           })
       }
-    },    
+    },
     {
       resolve: `@nehalist/gatsby-theme-nehalem`,
       options: {
@@ -100,9 +106,9 @@ module.exports = {
           background_color: `#555555`,
           theme_color: `#555555`,
           display: `minimal-ui`,
-          icon: `${__dirname}/content/assets/images/icon.png`,
-        },
-      },
+          icon: `${__dirname}/content/assets/images/icon.png`
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -111,9 +117,9 @@ module.exports = {
           {
             family: `Montserrat`,
             variants: [`regular`]
-          },
-        ],
-      },
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -128,6 +134,15 @@ module.exports = {
               withWebp: true
             }
           }
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          { domain: "//stats.g.doubleclick.net", crossOrigin: "anonymous" },
+          { domain: "//www.google-analytics.com", crossOrigin: "anonymous" }
         ]
       }
     },
@@ -153,11 +168,16 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt,
                   date: edge.node.frontmatter.created,
-                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path + '?utm_source='+edge.node.frontmatter.title+'&utm_medium=RSS&&utm_campaign=RSS%20Feed',
+                  url:
+                    site.siteMetadata.siteUrl +
+                    edge.node.frontmatter.path +
+                    "?utm_source=" +
+                    edge.node.frontmatter.title +
+                    "&utm_medium=RSS&&utm_campaign=RSS%20Feed",
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
+                  custom_elements: [{ "content:encoded": edge.node.html }]
+                });
+              });
             },
             query: `
             {
@@ -184,6 +204,6 @@ module.exports = {
           }
         ]
       }
-    },
-  ],
+    }
+  ]
 };

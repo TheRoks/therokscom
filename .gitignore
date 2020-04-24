@@ -60,6 +60,9 @@ typings/
 .cache/
 public
 
+# lighthouse reports
+.lighthouseci
+
 # Mac files
 .DS_Store
 
