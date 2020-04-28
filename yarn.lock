@@ -46,7 +46,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.8.7":
+"@babel/core@^7.8.7", "@babel/core@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.9.0.tgz#ac977b538b77e132ff706f3b8a4dbad09c03c56e"
   integrity sha512-kWc7L0fw1xwvI0zi8OKVBuxRVefwGOrKSQMvrQ3dW+bIIavBY3/NpXmpjMy7bQnLgwgzWQZ8TlM57YHpHNHz4w==
@@ -6288,12 +6288,12 @@ gatsby-telemetry@^1.2.3:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-theme@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-theme/-/gatsby-theme-0.0.12.tgz#2c0ae0024d3f096f270e2937104b45ea1d41350b"
-  integrity sha512-rlCkNYo1Q/Sqbn06fN5PbFJKhq7e3OK6kZEMFI+EgMmU63wphJOKVNrBUznl0dP8inNY3YdOJ4nWTjnQBVThmw==
+gatsby-theme@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-theme/-/gatsby-theme-0.1.0.tgz#cc9878c6b0a640d3d9ae479057a11e602f9b1fbb"
+  integrity sha512-xPdM7PV2VjSKSWmh4O7aL8Y3tqWs/qHATa5i8grwZuho/JzP2U2QdO5dUItBwWHdSzq5qOgkJvXkw74Cd0mblw==
   dependencies:
-    "@babel/core" "^7.8.7"
+    "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-jsx" "^7.8.3"
     commander "^2.20.3"
