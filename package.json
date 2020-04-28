@@ -42,6 +42,6 @@
     "read-time-estimate": "^0.0.2"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.3.13"
+    "@lhci/cli": "^0.3.14"
   }
 }
