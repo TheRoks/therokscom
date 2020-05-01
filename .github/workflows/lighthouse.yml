@@ -1,40 +1,15 @@
-name: Lighthouse
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+name: Audit pull request
+on: pull_request
 
 jobs:
-  lighthouse:
+  audit:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Install Node Modules
-      run: yarn
-
-    - name: Build
-      run: |
-        yarn build
-
-    - name: Lighthouse
-      run: |
-        yarn test:lh:ci --url=http://localhost:9000/using-wpp-targets-file-together-sitecore/
-        yarn test:lh:assert
-  
-    - name: Archive Lighthouse results
-      uses: actions/upload-artifact@v1
+    - name: Audit Netlify deploy preview
+      uses: jakejarvis/lighthouse-action@master
       with:
-        name: lighthouse-report
-        path: .lighthouseci
-
-    - name: Lighthouse Report
-      uses: manrueda/lighthouse-report-action@v1.1.2
+        netlify_site: 'friendly-mirzakhani-85ab7e.netlify.com'
+    - uses: actions/upload-artifact@master
       with:
-    # Directory where lighthouse JSON reports are stored
-        reports: .lighthouseci
-    # Github Token
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        name: report
+        path: './report'
