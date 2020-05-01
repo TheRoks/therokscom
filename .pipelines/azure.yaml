@@ -12,10 +12,10 @@ steps:
     yarn test:lh:ci --url=http://localhost
   displayName: Yarn Lighthouse
 - task: PublishPipelineArtifact@1
-  displayName: 'Publish Lighthouse Reports'
+  displayName: Publish Lighthouse Reports
   inputs:
-    targetPath: '$(Build.SourcesDirectory)/.lighthouseci'
-    artifact: 'lighthouse_reports'
+    targetPath: $(Build.SourcesDirectory)/.lighthouseci
+    artifact: lighthouse_reports
 - bash: |
     yarn test:lh:assert
   displayName: Yarn Lighthouse Assert
