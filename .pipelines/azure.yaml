@@ -1,0 +1,21 @@
+pool:
+  vmImage: 'ubuntu-latest
+
+steps:
+- bash: |
+    yarn
+  displayName: Yarn
+- bash: |
+    yarn build
+  displayName: Yarn Build
+- bash: |
+    yarn test:lh:ci --url=http://localhost
+  displayName: Yarn Lighthouse
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Lighthouse Reports'
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)/.lighthouseci'
+    artifact: 'lighthouse_reports'
+- bash: |
+    yarn test:lh:assert
+  displayName: Yarn Lighthouse Assert
