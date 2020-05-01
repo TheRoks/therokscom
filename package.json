@@ -14,7 +14,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test:lh:ci": "lhci collect --numberOfRuns=1 --start-server-command='yarn serve' --settings.chromeFlags='--no-sandbox'",
+    "test:lh:ci": "lhci collect --numberOfRuns=3 --start-server-command='yarn serve' --settings.chromeFlags='--no-sandbox'",
     "test:lh:assert": "lhci assert"
   },
   "dependencies": {

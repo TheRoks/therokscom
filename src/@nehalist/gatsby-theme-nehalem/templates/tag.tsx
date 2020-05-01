@@ -49,42 +49,38 @@ const TagTemplate: FunctionComponent<TagTemplateProps> = ({
 export default TagTemplate;
 
 export const query = graphql`
-  query($tag: String!) {
-    tag: tags(name: { eq: $tag }) {
-      name
-      color
-    }
-    posts: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" }
-        frontmatter: { tags: { eq: $tag } }
-      }
-      sort: { fields: frontmatter___created, order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            path
-            tags
-            excerpt
-            created
-            createdPretty: created(formatString: "DD MMMM, YYYY")
-            featuredImage {
-              childImageSharp {
-                sizes(maxWidth: 800, quality: 100) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+         query($tag: String!) {
+           tag: tags(name: { eq: $tag }) {
+             name
+             color
+           }
+           posts: allMarkdownRemark(
+             filter: {
+               fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" }
+               frontmatter: { tags: { eq: $tag } }
+             }
+             sort: { fields: frontmatter___created, order: DESC }
+           ) {
+             edges {
+               node {
+                 id
+                 frontmatter {
+                   title
+                   path
+                   tags
+                   excerpt
+                   created
+                   createdPretty: created(formatString: "DD MMMM, YYYY")
+                   featuredImage {
+                     childImageSharp {
+                       sizes(maxWidth: 800, quality: 100) {
+                         ...GatsbyImageSharpSizes_withWebp
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `;

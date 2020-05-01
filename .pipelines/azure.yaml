@@ -9,7 +9,7 @@ steps:
     yarn build
   displayName: 'Yarn Build'
 - bash: |
-    yarn test:lh:ci --url=http://localhost:9000
+    yarn test:lh:ci --url=http://localhost:9000/using-wpp-targets-file-together-sitecore/
   displayName: 'Yarn Lighthouse'
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Lighthouse Reports'

@@ -141,8 +141,8 @@ module.exports = {
       resolve: "gatsby-plugin-preconnect",
       options: {
         domains: [
-          { domain: "//stats.g.doubleclick.net", crossOrigin: "anonymous" },
-          { domain: "//www.google-analytics.com", crossOrigin: "anonymous" }
+          { domain: "https://stats.g.doubleclick.net", crossOrigin: "anonymous" },
+          { domain: "https://www.google-analytics.com", crossOrigin: "anonymous" }
         ]
       }
     },
