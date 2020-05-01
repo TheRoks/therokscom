@@ -1,11 +1,13 @@
 name: Lighthouse
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
 jobs:
-  build:
+  lighthouse:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +24,9 @@ jobs:
       run: |
         yarn test:lh:ci --url=http://localhost:9000/using-wpp-targets-file-together-sitecore/
         yarn test:lh:assert
+  
+    - name: Archive Lighthouse results
+      uses: actions/upload-artifact@v1
+      with:
+        name: lighthouse-report
+        path: .lighthouseci
