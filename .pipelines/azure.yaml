@@ -4,13 +4,13 @@ pool:
 steps:
 - bash: | 
     yarn
-  displayName: 'Yarn'
+  displayName: 'Install Node Modules'
 - bash: | 
     yarn build
-  displayName: 'Yarn Build'
+  displayName: 'Build'
 - bash: |
     yarn test:lh:ci --url=http://localhost:9000/using-wpp-targets-file-together-sitecore/
-  displayName: 'Yarn Lighthouse'
+  displayName: 'Lighthouse'
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Lighthouse Reports'
   inputs:
@@ -18,4 +18,4 @@ steps:
     artifact: 'lighthouse_reports'
 - bash: |
     yarn test:lh:assert
-  displayName: 'Yarn Lighthouse Assert'
+  displayName: 'Lighthouse Assert'
