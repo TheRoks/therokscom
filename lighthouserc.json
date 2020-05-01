@@ -13,7 +13,7 @@
         "first-contentful-paint": ["warn", { "minScore": 0.95 }],
         "first-meaningful-paint": ["warn", { "minScore": 0.95 }],
         "mainthread-work-breakdown": ["warn", { "minScore": 0.9 }],
-        "max-potential-fid": ["warn", { "minScore": 0.85 }],
+        "max-potential-fid": ["warn", { "minScore": 0.9 }],
         "bootup-time": ["warn", { "minScore": 0.95 }]
       }
     }
