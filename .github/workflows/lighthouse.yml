@@ -22,9 +22,8 @@ jobs:
 
     - name: Lighthouse
       run: |
-        yarn test:lh:ci --url=http://localhost:9000/using-wpp-targets-file-together-sitecore/
+        yarn test:lh:ci --url=https://deploy-preview-${{ github.event.pull_request.number }}--friendly-mirzakhani-85ab7e.netlify.app/using-wpp-targets-file-together-sitecore/
         yarn test:lh:assert
-        echo ${{ github.event.pull_request.number }}
   
     - name: Archive Lighthouse results
       uses: actions/upload-artifact@v1
