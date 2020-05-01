@@ -30,3 +30,11 @@ jobs:
       with:
         name: lighthouse-report
         path: .lighthouseci
+
+    - name: Lighthouse Report
+      uses: manrueda/lighthouse-report-action@v1.1.2
+      with:
+    # Directory where lighthouse JSON reports are stored
+        reports: .lighthouseci
+    # Github Token
+        github-token: ${{ secrets.GITHUB_TOKEN }}
