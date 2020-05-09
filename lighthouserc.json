@@ -1,5 +1,8 @@
 {
   "ci": {
+    "collect": {
+      "numberOfRuns": 3
+    },
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
@@ -16,6 +19,9 @@
         "max-potential-fid": ["warn", { "minScore": 0.85 }],
         "bootup-time": ["warn", { "minScore": 0.95 }]
       }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
     }
   }
 }
