@@ -22,7 +22,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({alt, style}) => {
       file(relativePath: {eq: "assets/images/profile.png"}) {
         childImageSharp {
           fixed(width: 55, height: 55) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }

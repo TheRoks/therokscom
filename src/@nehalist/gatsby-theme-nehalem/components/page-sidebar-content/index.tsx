@@ -41,7 +41,7 @@ const PageSidebarContent: FunctionComponent = () => {
               featuredImage {
                 childImageSharp {
                   fixed(width: 315, height: 100) {
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }

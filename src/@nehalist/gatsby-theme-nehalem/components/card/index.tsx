@@ -5,7 +5,7 @@ import {
   CardTitle,
   FeaturedImage,
   StyledArticle,
-  StyledCard,
+  StyledCard
 } from "./style";
 import styled from "styled-components";
 import theme from "../../styles/theme";
@@ -14,16 +14,16 @@ import { TimeToRead } from "../../../../components";
 export interface CardProps {
   title?: string;
   timeToRead?: {
-    humanizedDuration?: string;
-    duration: number;
+    humanizedDuration?: string,
+    duration: number
   };
   path: string;
   featuredImage?: any;
   content?: string;
   meta?: {
-    time: string;
-    timePretty: string;
-    tags: string[] | null;
+    time: string,
+    timePretty: string,
+    tags: string[] | null
   };
   halfImage?: boolean;
   compact?: boolean;
@@ -41,15 +41,11 @@ export const Card: FunctionComponent<CardProps> = ({
   compact = false,
   style,
   children,
-  timeToRead,
+  timeToRead
 }) => {
   return (
     <StyledArticle style={style}>
       <StyledCard to={path}>
-        {/* TODO: Oh boy... */}
-        {featuredImage && featuredImage.fixed && (
-          <FeaturedImage fixed={featuredImage.fixed} halfImage={halfImage} />
-        )}
         {featuredImage && featuredImage.sizes && (
           <FeaturedImage sizes={featuredImage.sizes} halfImage={halfImage} />
         )}
