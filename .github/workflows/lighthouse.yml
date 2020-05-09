@@ -1,10 +1,11 @@
-name: Build and Run Lighthouse CI
+name: Build project and Run Lighthouse CI
 on: [push]
 jobs:
   lhci:
     name: Lighthouse CI
     runs-on: ubuntu-latest
-    steps:      
+    steps:
+      - uses: actions/checkout@v2
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
