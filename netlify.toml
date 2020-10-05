@@ -17,4 +17,4 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
-    Content-Security-Policy = "default-src 'self'; script-src www.google-analytics.com 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: www.google-analytics.com stats.g.doubleclick.net 'self'; font-src 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src www.google-analytics.com 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src data: www.google-analytics.com stats.g.doubleclick.net 'self'; font-src 'self'; form-action 'self'; connect-src: www.google-analytics.com"
