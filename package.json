@@ -37,6 +37,7 @@
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sitemap": "^2.4.14",
+    "gatsby-plugin-web-vitals": "^1.0.3",
     "gatsby-theme": "^0.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
