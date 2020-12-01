@@ -20,7 +20,7 @@
   "dependencies": {
     "@nehalist/gatsby-theme-nehalem": "^1.0.9",
     "gatsby": "^2.24.91",    
-    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby-plugin-google-analytics": "^2.6.0",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-robots-txt": "^1.5.3",
