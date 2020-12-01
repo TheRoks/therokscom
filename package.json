@@ -45,6 +45,6 @@
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
     "gatsby-cli": "^2.12.113",
-    "@lhci/cli": "^0.6.0"
+    "@lhci/cli": "^0.6.1"
   }
 }
