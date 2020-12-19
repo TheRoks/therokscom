@@ -19,32 +19,32 @@
   },
   "dependencies": {
     "@nehalist/gatsby-theme-nehalem": "^1.0.9",
-    "gatsby": "^2.24.91",    
-    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby": "^2.29.1",
+    "gatsby-plugin-google-analytics": "^2.8.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-preconnect": "^1.1.54",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sitemap": "^2.4.17",
+    "gatsby-plugin-sitemap": "^2.9.0",
     "gatsby-plugin-web-vitals": "^1.0.3",
-    "gatsby-theme": "^0.1.6",
+    "gatsby-theme": "^0.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-sharingbuttons": "^1.0.0",
     "read-time-estimate": "^0.0.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.6.0",
-    "@typescript-eslint/parser": "4.6.0",
+    "@lhci/cli": "^0.6.1",
+    "@typescript-eslint/eslint-plugin": "4.10.0",
+    "@typescript-eslint/parser": "4.10.0",
     "babel-eslint": "10.x",
-    "eslint": "7.12.1",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint": "7.16.0",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "5.2.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
-    "gatsby-cli": "^2.12.113",
-    "@lhci/cli": "^0.6.0"
+    "gatsby-cli": "^2.16.1"
   }
 }
