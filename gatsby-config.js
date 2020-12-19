@@ -92,7 +92,7 @@ module.exports = {
                 siteUrl
               }
             }
-  
+
             allSitePage {
               edges {
                 node {
@@ -127,14 +127,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`regular`]
-          }
-        ]
+          `Montserrat`,
+          `regular` // you can also specify font weights and styles
+        ],
+        display: 'swap'
       }
     },
     {
