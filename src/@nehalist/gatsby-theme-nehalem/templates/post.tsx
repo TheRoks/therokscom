@@ -278,7 +278,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) =>
         updatedAt={post.frontmatter.updated}
         tags={post.frontmatter.tags}
         description={post.frontmatter.excerpt}
-        image={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.sizes.src : null}
+        image={post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.fluid.src : null}
       />
       <ReadingProgress target={readingProgressRef} color={primaryTag ? primaryTag.color : undefined}/>
       <PostContainer>
@@ -310,7 +310,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) =>
               <PostTitle>{post.frontmatter.title}</PostTitle>
             </PostHeader>
             {post.frontmatter.featuredImage &&
-            <FeaturedImage sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+            <FeaturedImage fluid={post.frontmatter.featuredImage.childImageSharp.sizes}/>
             }
             <StyledPost dangerouslySetInnerHTML={{__html: post.html}} className={`post`}/>
             <PostFooter>
@@ -342,7 +342,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({data, location}) =>
           </BioWrapper>
         </PostAdditionContent>
       </PostAddition>
-      <Comments/>
     </Layout>
   );
 };
@@ -368,8 +367,8 @@ export const query = graphql`
         updatedPretty: updated(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp {
-            sizes(maxWidth: 800, quality: 75) {
-              ...GatsbyImageSharpSizes_withWebp
+            fluid(maxWidth: 800, quality: 75) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
