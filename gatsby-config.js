@@ -127,14 +127,22 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `Montserrat`,
-          `regular` // you can also specify font weights and styles
-        ],
-        display: 'swap'
-      }
+        fonts: {
+          google: [
+            {
+              family: "Montserrat",
+              variants: ["regular"],
+              subsets: ["latin"],
+              fontDisplay: "swap",
+              strategy: "selfHosted",
+            },
+          ],
+        },
+        useMinify: false,
+        usePreload: true,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
