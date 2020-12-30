@@ -156,7 +156,8 @@ module.exports = {
               maxWidth: 1200,
               withWebp: true
             }
-          }
+          },
+          `gatsby-remark-static-images`
         ]
       }
     },
