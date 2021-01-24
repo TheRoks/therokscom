@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Stefan Roks <stefan@theroks.com> (@theroks)",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint:ts": "eslint -c ../.eslintrc ./src --ext ts --ext tsx --ext js --ext jsx",
+    "lint:css": "stylelint --config ../.stylelintrc './src/**/*.{ts,tsx}'",
+    "lint": "yarn run lint:ts && yarn run lint:css",
+    "lh:ci": "lhci autorun --config=../lighthouserc.json --upload.target=temporary-public-storage --upload.token='$LHCI_GITHUB_APP_TOKEN' || echo 'LHCI failed!'"
+  },
+  "dependencies": {
+    "@theroks/gatsby-theme-blog": "*",
+    "gatsby": "^2.31.1",
+    "gatsby-plugin-google-analytics": "^2.10.0",
+    "gatsby-plugin-preconnect": "^1.1.54",
+    "gatsby-plugin-robots-txt": "^1.5.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.6.1"
+  }
+}
