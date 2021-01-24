@@ -1,7 +1,6 @@
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
 [build]
-  base = "blog"
   command = "yarn build"
   publish = "public/"
 [build.environment]
