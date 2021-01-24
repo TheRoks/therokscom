@@ -58,7 +58,7 @@ const PostContent = styled.div`
 
   li > a,
   p > a {
-    color: ${Theme.layout.linkColor};
+    color: ${Theme.layout.secondaryColor};
     border-bottom: 2px ${Theme.layout.linkColor} solid;
   }
 
