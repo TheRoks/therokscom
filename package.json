@@ -1,51 +1,18 @@
 {
-  "name": "theroks-blog",
-  "description": "TheRoks.com blog",
-  "author": {
-    "name": "Stefan Roks",
-    "email": "stefan@theroks.com"
-  },
+  "name": "gatsby-theme-theroks-blog-workspace",
   "private": true,
-  "version": "1.0.0",
-  "main": "n/a",
+  "version": "0.0.1",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --log-pages",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test:lh:ci": "lhci collect --numberOfRuns=3 --start-server-command='yarn serve' --settings.chromeFlags='--no-sandbox'",
-    "test:lh:assert": "lhci assert"
+    "build": "yarn workspace blog build",
+    "develop": "yarn workspace blog develop",
+    "serve": "yarn workspace blog serve",
+    "lint": "yarn workspace @theroks/gatsby-theme-blog lint && yarn workspace blog lint",
+    "lh:ci": "yarn workspace blog lh:ci"
   },
-  "dependencies": {
-    "@nehalist/gatsby-theme-nehalem": "^1.0.9",
-    "gatsby": "^2.31.1",
-    "gatsby-plugin-google-analytics": "^2.10.0",
-    "gatsby-plugin-preconnect": "^1.1.54",
-    "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sitemap": "^2.11.0",
-    "gatsby-plugin-web-vitals": "^1.0.3",
-    "gatsby-plugin-webfonts": "^1.1.4",
-    "gatsby-remark-static-images": "^1.2.1",
-    "gatsby-theme": "^0.7.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-sharingbuttons": "^1.0.0",
-    "read-time-estimate": "^0.0.3"
-  },
-  "devDependencies": {
-    "@lhci/cli": "^0.6.1",
-    "@typescript-eslint/eslint-plugin": "4.14.0",
-    "@typescript-eslint/parser": "4.14.0",
-    "babel-eslint": "10.x",
-    "eslint": "7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "5.2.0",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-react": "7.22.0",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "gatsby-cli": "^2.18.0"
-  }
+  "workspaces": [
+    "theme",
+    "blog"
+  ]
 }

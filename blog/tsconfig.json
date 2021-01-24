@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "strict": true,
+    "noEmit": true,
+    "target": "esnext",
+    "jsx": "react",
+    "allowJs": true,
+    "lib": ["dom", "es2019", "es2020"],
+    "noImplicitReturns": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["./node_modules", "./public", "./.cache"],
+  "include": ["./src/**/*"]
+}

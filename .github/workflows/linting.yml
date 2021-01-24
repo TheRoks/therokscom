@@ -1,8 +1,8 @@
-name: Build project and Run Lighthouse CI
+name: Linting
 on: [push]
 jobs:
-  lhci:
-    name: Lighthouse CI
+  linting:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,9 +13,6 @@ jobs:
       - name: Install Packages
         run: |
           yarn
-      - name: Run Build
+      - name: Run Linting
         run: |
-          yarn build
-      - name: Run Lighthouse CI
-        run: |
-          yarn lh:ci
+          yarn lint
