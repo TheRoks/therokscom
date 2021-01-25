@@ -46,8 +46,8 @@ module.exports = (themeOptions) => {
       author: {
         name: `theroks`,
         description: `I'm <strong>theroks</strong>, a Gatsby theme by
-        <a href="https://nehalist.io" rel="noopener" target="_blank">nehalist.io</a>. If you like what you see feel free to give a
-        <a href="https://github.com/theroks/gatsby-theme-theroks" rel="noopener" target="_blank">star on GitHub!</a>`,
+        <a href="https://theroks.com" rel="noopener" target="_blank">theroks.com</a>. If you like what you see feel free to give a
+        <a href="https://github.com/theroks/therokscom" rel="noopener" target="_blank">star on GitHub!</a>`,
         social: {
           facebook: ``,
           twitter: `https://twitter.com/theroks`,
