@@ -88,8 +88,16 @@ const PostContent = styled.div`
   h2 {
     border-top: 1px solid #ececec;
     margin-top: 44px;
-    padding-top: 40px;
+    padding-top: 20px;
     line-height: 1.2;
+  }
+
+  h2 > a.anchor.before,
+  h3 > a.anchor.before,
+  h4 > a.anchor.before,
+  h5 > a.anchor.before,
+  h6 > a.anchor.before {
+    top: revert;
   }
 
   code[class*="language-text"] {
