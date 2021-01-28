@@ -20,7 +20,7 @@ Over the years Sitecore changed little by little. In the past there were a lot o
 
 ### Sitecore's Static Classes vs. Abstract Classes
 
-To improve testability of your custom Sitecore it's a good practice to don't use static classes. Sitecore has quite a few of them. To avoid these the analyzers will show you warnings when using Sitecore static classes and tell you which base class you should inject.
+To improve testability of your custom Sitecore it's a good practice to don't use static classes. Sitecore has quite a few of them. To avoid these the analyzers will show you warnings when using Sitecore static classes and tell you which base class you should inject. ![Sitecore roslyn analyzer](./sitecore-analyzer.png)
 
 Many of these static classes are not regularly used, but some may be used quite often. For example: `Log`, `LinkManager`, `Settings` and `TemplateManager`. The full list of static classes that should be replaced by a base class can be found in the [documentation of the package](https://github.com/TheRoks/Sitecore.Analyzers/blob/main/src/TheRoks.Sitecore.Analyzers/AnalyzerReleases.Shipped.md).
 
