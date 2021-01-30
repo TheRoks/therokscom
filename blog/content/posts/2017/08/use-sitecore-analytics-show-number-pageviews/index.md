@@ -13,12 +13,12 @@ You probably have on sites with pages that show how often these are visited. Thi
 
 ## Sitecore Analytics
 
-Included in Sitecore, are the analytics. Out-of-the-box Sitecore tracks users and their behavior. In the xDB there’s a collection database that stored the experience data and in the SQLServer there’s a reporting database that stores all the aggregated reporting data. Sitecore automatically syncs the collection database to the aggregated reporting database by the aggregation pipeline.
+Included in Sitecore, are the analytics. Out-of-the-box Sitecore tracks users and their behavior. In the xDB there’s a collection database that stores the experience data and in the SQLServer there’s a reporting database that stores all the aggregated reporting data. Sitecore automatically syncs the collection database to the aggregated reporting database by the aggregation pipeline.
 
 Using the Sitecore reporting database
 The Sitecore analytics API comes with some handy features to achieve this with the reporting database. We need some templates and a little code to do the trick. First of all we need to create an item of the template; `/sitecore/templates/System/Analytics/ReportQuery`. Where you create this item is up to you. I prefer to create this under `/system/settings/[layer]/[module]` in a Helix architecture.
 
-This item contains two field that are important. Data Source; this field is filled with reporting and referrers to the database we are accessing with this query. Second is the query field. In this field we put the SQL query that will be executed on the reporting database.
+This item contains two fields that are important. Data Source; this field is filled with reporting and referrers to the database we are accessing with this query. Second is the query field. In this field we put the SQL query that will be executed on the reporting database.
 
 ```sql
 SELECT sum([Visits]) as Visits
@@ -27,7 +27,7 @@ SELECT sum([Visits]) as Visits
    AND ItemId = @ItemId
 ```
 
-If we look at the query we see that the table Fact_PageViews is used. The parameters that go into the query are @Timespan and @ItemId. @ItemId will be the item id of the page we want to measure, @Timespan is the number in days we want to look in the history. In my case this is an requirement to show number of visits of the last x days. Be aware this has to be a negative number.
+If we look at the query we see that the table Fact_PageViews is used. The parameters that go into the query are @Timespan and @ItemId. @ItemId will be the item id of the page we want to measure, @Timespan is the number in days we want to look in the history. In my case this is a requirement to show the number of visits of the last x days. Be aware this has to be a negative number.
 
 ![Sitecore Report Query](./sitecore-report-query.png)
 
@@ -69,7 +69,7 @@ public class VisitsQuery : ItemBasedReportingQuery
 }
 ```
 
-In this code you see the ID ItemVisits. This guid referrers to the item we created before. The parameters are passed into a dictionary and the query is being executed. The result is been put into a property than can be accessed afterwards.
+In this code you see the ID ItemVisits. This guid refers to the item we created before. The parameters are passed into a dictionary and the query is being executed. The result is put into a property that can be accessed afterwards.
 
 Next is to use the query. This can be done everywhere you want.
 

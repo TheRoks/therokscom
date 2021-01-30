@@ -7,23 +7,23 @@ created: 2019-10-13
 updated: 2019-10-13
 ---
 
-Last period I'm working in a monorepo. With a monorepo I mean, we choose to put all the code of an entire website in one repository. This code contains NET code for Sitecore, Angular single page apps, styling with Sass and some migrated legacy code from AngularJS. Yes, even the legacy code is in the repository.
+Since a while I've been working in a monorepo. With a monorepo I mean, we choose to put all the code of an entire website in one repository. This code contains NET code for Sitecore, Angular single page apps, styling with Sass and some migrated legacy code from AngularJS. Yes, even the legacy code is in the repository.
 
 ## As it happened
 
-At the beginning this kind of repository starts small, but after a few months it starts growing, and growing. All the problems that you'll find on the internet about monorepos arise. In this post I'll describe how we tried to solve the build performance that was rising to over an hour to manage it back to be on average on 12 minutes.
+At the beginning this kind of repository starts small, but after a few months it starts growing, and growing. All the problems that you'll find on the internet about monorepos arise. In this post I'll describe how we tried to solve the build performance that was rising to over an hour to manage it back to bbeing on average on 12 minutes.
 
 ## Situation report
 
-As mentioned before the repository consists .NET, Angular, AngularJS and Sass code. All have their specifics. The .NET code is one big solution with a growing number of projects, at the moment of writing this, it's at 90 projects. Many of them are not related to each other, as we follow the [Helix principles of Sitecore](https://helix.sitecore.net).
+As mentioned before the repository consists of .NET, Angular, AngularJS and Sass code. All have their specifics. The .NET code is one big solution with a growing number of projects, at the moment of writing this, it's at 90 projects. Many of them are not related to each other, as we follow the [Helix principles of Sitecore](https://helix.sitecore.net).
 
-The Angular code, is brand new and uses NX to optimize all building and testing tasks. Angular uses a lot off Node modules, which is heavy on Windows, but working nicely on a Linux environment. This last is also applicable for Sass and AngularJS code.
+The Angular code is brand new and uses NX to optimize all building and testing tasks. Angular uses a lots of Node modules, which is heavy on Windows, but working nicely on a Linux environment. This last is also applicable for Sass and AngularJS code.
 
 ## Use the right hardware for the job
 
-Building a .NET solution with MSBuild can be done with a lot off flags, one off them is to use all the core on the build agent. One requirement, you'll need cores. Cores come with money off course, but on a Sitecore Helix based solution, more cores is better. Typically I would go for at least 8 cores.
+Building a .NET solution with MSBuild can be done with a lot of flags, one of them is to use all the core on the build agent. One requirement, you'll need cores. Cores come with money off course, but on a Sitecore Helix based solution, more cores is better. Typically I would go for at least 8 cores.
 
-Build clientside code, like Angular or Sass is a quit different story. In this case all the cores on your Windows build agent will lose it from a much cheaper Linux build agent. We had a 8 cores Windows build agent, which was slower than the 2 core hosted Ubuntu build agent of Azure DevOps. In case of money, build your clientside code on a Linux based environment. That's why these guys work on a MacBook, not only because it's fancy. If you here for a 2 or mores cores, it depends on your needs, the more is better. But keep in mind that not all node task runner support multi core when running there tasks. If you want to run multi-core, take a look at [Nx](https://nx.dev).
+Build client side code, like Angular or Sass is a quite different story. In this case all the cores on your Windows build agent will lose it from a much cheaper Linux build agent. We had a 8 cores Windows build agent, which was slower than the 2 core hosted Ubuntu build agent of Azure DevOps. In the case of money, build your client side code on a Linux based environment. That's why these guys work on a MacBook, not only because it's fancy. If you here for a 2 or mores cores, it depends on your needs, the more is better. But keep in mind that not all node task runner support multi core when running there tasks. If you want to run multi-core, take a look at [Nx](https://nx.dev).
 
 ## Minimize network traffic
 
@@ -37,14 +37,14 @@ For more information on how to get best performance with NPM check [this blog](h
 
 ## Use the right strategy for the job
 
-Building a pipeline for a monorepo can be challenging. Think about what can be done in parallel and what must be sequential. In case of monorepo with .NET, Angular, Sass and AngularJS code, nothing really depends on other artifacts. Who is responsible for the final deploy package? Usually we would say it's the .NET build, where as we deploy it to a Azure WebApp as a Webdeploy package.
+Building a pipeline for a monorepo can be challenging. Think about what can be done in parallel and what must be sequential. In case of monorepo with .NET, Angular, Sass and AngularJS code, nothing really depends on other artifacts. Who is responsible for the final deploy package? Usually we would say it's the .NET build, whereas we deploy it to a Azure WebApp as a Webdeploy package.
 
 First challenge over here, how do we make one package of those 90+ web application projects. Let's first start by not creating 90 webdeploy packages, but let all the projects publish their artifacts to disk e.g. `$(Build.ArtifactStagingDirectory)\wwwroot`. Later on we will use this again.
 
 Next challenge: how are we going to get all the compiled Sass and Angular code fitting in this picture. This code is not part of the .NET code structure, but lives in separate folders in the repository.
 
-This can de done by using the wpp.target files as a wrote before in [this previous blog post](/using-wpp-targets-file-together-sitecore). However, this make the .NET code dependent on all the clientside code. This is not what you want, because it makes things slow.
-We solve this by using a .NET core project. In this project we have ItemGroups describing the mapping between the clientside dist folders and the webroot. With a `dotnet publish -o <path>` to the webroot folder all files will be copied to the webroot folder.
+This can be done by using the wpp.target files as I wrote before in [this previous blog post](/using-wpp-targets-file-together-sitecore). However, this makes the .NET code dependent on all the client side code. This is not what you want, because it makes things slow.
+We solve this by using a .NET core project. In this project we have ItemGroups describing the mapping between the client side dist folders and the webroot. With a `dotnet publish -o <path>` to the webroot folder all files will be copied to the webroot folder.
 
 ```xml
 <ItemGroup Label="Angular Apps">
@@ -59,19 +59,19 @@ The last piece of this puzzle is Azure DevOps and it's features we can use to ru
 
 ### DevOps Yaml pipelines
 
-To run in an optimal way we use the relative new Yaml pipelines in Azure DevOps. All what we do can also be achieved in classic mode, but I prefer Yaml.
+To run in an optimal way we use the relatively new Yaml pipelines in Azure DevOps. All what we do can also be achieved in classic mode, but I prefer Yaml.
 
-In this Yaml pipeline there are several split-ups to make. The most important here are jobs. Jobs can be dependent of each other. If you do not specify this dependency they will run in parallel, if possible. You must be able to run multiple agents at the same time.
-All the different code chunks we have, .NET, Angular, Sass, AngularJS run in different jobs. In a job we can specify the agent pool on which this job need to run. For .NET we choose the 8 cores Windows machine, for clientside jobs the Ubuntu 2 core machines.
-At the end we create one job to merge it all together and create a web deploy package of it.
+In this Yaml pipeline there are several split-ups to make. The most important here are jobs. Jobs can be dependent on each other. If you do not specify this dependency they will run in parallel, if possible. You must be able to run multiple agents at the same time.
+All the different code chunks we have, .NET, Angular, Sass, AngularJS run in different jobs. In a job we can specify the agent pool on which this job needs to run. For .NET we choose the 8 cores Windows machine, for client side jobs the Ubuntu 2 core machines.
+At the end we create one job to merge it all together and create a web deploy package for it.
 
 ### Pipeline Artifacts
 
-Pipeline artifacts is a task and will be de successor of the Publish Build Artifacts task. It's blazing fast and uses new techniques to achieve this. We will use it at the end of all separate jobs to upload the output. Even on a .NET webroot of 130MB it's a matter of seconds to upload this. In the merge job on the end, the download pipeline artifacts task is used. This download the artifact amazingly fast as well.
+Pipeline artifacts is a task and will be the successor of the Publish Build Artifacts task. It's blazing fast and uses new techniques to achieve this. We will use it at the end of all separate jobs to upload the output. Even on a .NET webroot of 130MB it's a matter of seconds to upload this. In the merge job on the end, the download pipeline artifacts task is used. This downloads the artifact amazingly fast as well.
 
 ### Cache Beta
 
-This task is at the time of writing this blog still in preview. Following [the documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/caching/?view=azure-devops) we should use this to cache the NPM cache. This is done by upload the cache at the end of the job and download it again at a repetitive run, when the key, which you can provide is the same. In my test runs. This explained scenario didn't give me many benefits.
+This task is at the time of writing this blog still in preview. Following [the documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/caching/?view=azure-devops) we should use this to cache the NPM cache. This is done by uploading the cache at the end of the job and downloading it again at a repetitive run, when the key, which you can provide, is the same. In my test runs. This explained scenario didn't give me many benefits.
 
 ### Optimize the optimizing task
 
@@ -125,12 +125,12 @@ steps:
     cacheHitVar: '${{ parameters.cachehit }}'
 ```
 
-The cachehit parameter that will we used as a cacheHitVar, can be used as a condition on all consequtive tasks.
+The cachehit parameter that will we used as a cacheHitVar, will be used as a condition on all consecutive tasks.
 ![Optimized Pipeline](./optimized-pipeline.png)
 
 ## Merging all together
 
-When all code is build and all have upload their artifacts, the merge job will start. Here it starts with downloading all pipeline artifacts. The .NET code will be download at a folder that will serve as the webroot folder. After that the .NET Core publish will be executed to get all the clientside artifacts in the right place of the webroot. Note, that this project also can be used during development mode.
+When all code is built and all have uploaded their artifacts, the merge job will start. Here it starts with downloading all pipeline artifacts. The .NET code will be downloaded to a folder that will serve as the webroot folder. After that the .NET Core publish will be executed to get all the clientside artifacts in the right place of the webroot. Note, that this project also can be used during development mode.
 
 When everything is in place we create a web deploy package of it all, again with a Powershell script.
 

@@ -12,13 +12,13 @@ When working on Sitecore and deploying modules to a Sitecore site we only want t
 
 ## The project setup
 
-We use Unicorn to serialize Sitecore items. These yml files are not included in the Visual Studio project. In development environment these live in a git repository (e.g. c:\git\mysite\..\serialization\..), in the Sitecore instance they live in the App_Data folder.
+We use Unicorn to serialize Sitecore items. These yml files are not included in the Visual Studio project. In the development environment these live in a git repository (e.g. c:\git\mysite\..\serialization\..), in the Sitecore instance they live in the App_Data folder.
 
-Deployments with webdeploy, will setup the security desdriptors (ACL) by default. This is mostly not needed and a relative slow process during deployment. This could be skipped.
+Deployments with webdeploy, will set up the security descriptors (ACL) by default. This is mostly not needed and a relative slow process during deployment. This could be skipped.
 
-With Sitecore we use patch files to adjust the behavior of Sitecore. We also use some patch files to adjust Sitecore in a development environment e.g. set the serialization path to the c:\git\mysite\..\serialization\.. folder and patch out some pipelines that should only used on a production environment.
+With Sitecore we use patch files to adjust the behavior of Sitecore. We also use some patch files to adjust Sitecore in a development environment e.g. set the serialization path to the c:\git\mysite\..\serialization\.. folder and patch out some pipelines that should only be used in a production environment.
 
-On a local development environment we use Web Publishing to a IIS site within Visual Studio and on the test, acceptance and production environment we use Webdeploy.
+On a local development environment we use Web Publishing to an IIS site within Visual Studio and on the test, acceptance and production environment we use Webdeploy.
 
 ## Wpp.targets file to the rescue
 

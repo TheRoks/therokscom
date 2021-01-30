@@ -7,7 +7,7 @@ created: 2020-12-30
 updated: 2020-12-30
 ---
 
-After working with git for years now. I still learn new things. Git has a lot of options, some are easy to use, some are complicated, and very powerfull. A short resume on usefull git possibilties.
+After working with git for years now. I still learn new things. Git has a lot of options, some are easy to use, some are complicated, and very powerful. A short resume on useful git possibilities.
 
 ## Squash and merge
 
@@ -58,15 +58,15 @@ pick 5ca7e61 Message for commit #3
 
 When you save and close the file, Git will perform the rebase according to your instructions.
 
-After completing a rebase you'll always have to do a force push to the remote branch. This is because you are rewriting existing commits. Make sure in your remote repository you can only make force pushes on branches that you own and explicit revoke this permission on public branches.
+After completing a rebase you'll always have to do a force push to the remote branch. This is because you are rewriting existing commits. Make sure in your remote repository you can only make force pushes on branches that you own and explicitly revoke this permission on public branches.
 
-VSCode has an extension, GitLens which makes it easier to interactive rebase.
+VSCode has an extension, GitLens which makes it easier to interactively rebase.
 
 ![GitLens Rebasing](./rebase.gif)
 
 ### Conflicts
 
-When working on long running branches, you'll do more than one rebase on your branch. To prevent you'll have to resolve the same conflicts over and over again, enabled the git feature: Reuse recorded resolution. This will record and reuse previous conflicts resolutions.
+When working on long running branches, you'll do more than one rebase on your branch. To prevent you'll have to resolve the same conflicts over and over again, enable the git feature: Reuse recorded resolution. This will record and reuse previous conflicts resolutions.
 
 ```bash
 git config --global rerere.enabled true
@@ -83,7 +83,7 @@ Your `.gitconfig` file will look like this
 
 ## Git Alias
 
-Another way to ease your git life, is to have some aliases for commands or command squences you ofen use. Aliases can be defined in a `.gitconfig` file.
+Another way to ease your git life, is to have some aliases for commands or command sequences you often use. Aliases can be defined in a `.gitconfig` file.
 
 ```bash
 [alias]
@@ -94,7 +94,7 @@ Another way to ease your git life, is to have some aliases for commands or comma
 
 ## Tooling
 
-To setup VSCode as default editor for all git commands. Run this command
+To set up VSCode as default editor for all git commands. Run this command
 
 ```bash
 git config --global core.editor "code --wait"
