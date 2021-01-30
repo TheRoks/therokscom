@@ -24,11 +24,11 @@ To improve the testability of your custom Sitecore it's a good practice to don't
 
 Many of these static classes are not regularly used, but some may be used quite often. For example: `Log`, `LinkManager`, `Settings` and `TemplateManager`. The full list of static classes that should be replaced by a base class can be found in the [documentation of the package](https://github.com/TheRoks/Sitecore.Analyzers/blob/main/src/TheRoks.Sitecore.Analyzers/AnalyzerReleases.Shipped.md).
 
-In many cases, static classes easily can be replaced by the base class alternative without losing any functionality. It always improves testability and design. All base classes are registered as singleton, so there are no concerns regarding hidden singletons. If you want to see the complete list of the currently registered, along with its scope and type visit `/sitecore/admin/showservicesconfig.aspx`.
+In many cases, static classes easily can be replaced by the base class alternative without losing any functionality. It always improves testability and design. All base classes are registered as a singleton, so there are no concerns regarding hidden singletons. If you want to see the complete list of the currently registered, along with its scope and type visit `/sitecore/admin/showservicesconfig.aspx`.
 
 ### Potential Performance Issues
 
-There are some Sitecore code constructs, that makes you always curious about the performance in real-world scenarios. So you'll get warnings when using `Axes.GetDescendants()` or `SelectItems(string xpath)`. Most of the time there's a good alternative available like search. If it's not, you may suppress the rule with a good reason and your colleagues know why you think it's a good idea to use it.
+There are some Sitecore code constructs, that make you always curious about the performance in real-world scenarios. So you'll get warnings when using `Axes.GetDescendants()` or `SelectItems(string xpath)`. Most of the time there's a good alternative available like search. If it's not, you may suppress the rule with a good reason and your colleagues know why you think it's a good idea to use it.
 
 ### Exception handling
 

@@ -7,12 +7,12 @@ created: 2020-12-30
 updated: 2020-12-30
 ---
 
-After working with git for years now. I still learn new things. Git has a lot of options, some are easy to use, some are complicated, and very powerful. A short resume on useful git possibilities.
+After working with git for years now. I still learn new things. Git has a lot of options, some are easy to use, some are complicated and very powerful. A short resume on useful git possibilities.
 
 ## Squash and merge
 
 It is very useful when we are working on a feature branch and we have done so many commits for a single feature now we want to merge this to master.
-We can do that but as there are so many commits which are not even useful for the master so the better way is to squash them into the single commit and that commit will be merged in the master.
+We can do that but as there are so many commits that are not even useful for the master so the better way is to squash them into ax single commit and that commit will be merged in the master.
 
 ```bash
 git checkout master
@@ -21,7 +21,7 @@ git merge feature —-squash
 
 ## Git rebase
 
-The major benefit of rebasing is that you get a much cleaner project history. First, it eliminates the unnecessary merge commits required by git merge. Second,  rebasing also results in a perfectly linear project history—you can follow the tip of dev all the way to the beginning of the project without any forks. This makes it easier to navigate your project with commands like git log, git bisect and gitk.
+The major benefit of rebasing is that you get a much cleaner project history. First, it eliminates the unnecessary merge commits required by git merge. Second,  rebasing also results in a perfectly linear project history—you can follow the tip of dev to the beginning of the project without any forks. This makes it easier to navigate your project with commands like git log, git bisect, and gitk.
 
 Never do the rebase on public branches like the master as it can be potentially catastrophic for your collaboration workflow. And, less importantly, rebasing loses the context provided by a merge commit—you can’t see when upstream changes were incorporated into the feature.
 
@@ -34,7 +34,7 @@ So, before you run git rebase, always ask yourself, “Is anyone else looking at
 
 ## Git rebase interactive
 
-Interactive rebasing gives you the opportunity to alter commits as they are moved to the new branch. This is even more powerful than an automated rebase, since it offers complete control over the branch’s commit history. Typically, this is used to clean up a messy history before merging a feature branch into master.
+Interactive rebasing allows you to alter commits as they are moved to the new branch. This is even more powerful than an automated rebase since it offers complete control over the branch’s commit history. Typically, this is used to clean up a messy history before merging a feature branch into master.
 
 ```bash
 git checkout feature git rebase -i master
@@ -66,7 +66,7 @@ VSCode has an extension, GitLens which makes it easier to interactively rebase.
 
 ### Conflicts
 
-When working on long running branches, you'll do more than one rebase on your branch. To prevent you'll have to resolve the same conflicts over and over again, enable the git feature: Reuse recorded resolution. This will record and reuse previous conflicts resolutions.
+When working on long-running branches, you'll do more than one rebase on your branch. To prevent you'll have to resolve the same conflicts over and over again, enable the git feature: Reuse recorded resolution. This will record and reuse previous conflict resolutions.
 
 ```bash
 git config --global rerere.enabled true
@@ -83,7 +83,7 @@ Your `.gitconfig` file will look like this
 
 ## Git Alias
 
-Another way to ease your git life, is to have some aliases for commands or command sequences you often use. Aliases can be defined in a `.gitconfig` file.
+Another way to ease your git life is to have some aliases for commands or command sequences you often use. Aliases can be defined in a `.gitconfig` file.
 
 ```bash
 [alias]
@@ -94,13 +94,13 @@ Another way to ease your git life, is to have some aliases for commands or comma
 
 ## Tooling
 
-To set up VSCode as default editor for all git commands. Run this command
+To set up VSCode as the default editor for all git commands. Run this command
 
 ```bash
 git config --global core.editor "code --wait"
 ```
 
-To use VSCode as diff and mergetool put this configuration in your `.gitconfig` file
+To use VSCode as diff and merge tool put this configuration in your `.gitconfig` file
 
 ```bash
 [core]

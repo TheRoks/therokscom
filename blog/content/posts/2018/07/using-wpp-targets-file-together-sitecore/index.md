@@ -2,7 +2,7 @@
 title: "Using the wpp.targets file together with Sitecore"
 path: "/using-wpp-targets-file-together-sitecore/"
 tags: ["Sitecore"]
-excerpt: "A brief description on how to use the wpp.targets file in a Visual Project to keep your webdeploy packages clean."
+excerpt: "A brief description on how to use the wpp.targets file in a Visual Project to keep your web deploy packages clean."
 featuredImage: "./wpptarget-with-sitecore-deployment.png"
 created: 2018-07-13
 updated: 2018-07-13
@@ -12,13 +12,13 @@ When working on Sitecore and deploying modules to a Sitecore site we only want t
 
 ## The project setup
 
-We use Unicorn to serialize Sitecore items. These yml files are not included in the Visual Studio project. In the development environment these live in a git repository (e.g. c:\git\mysite\..\serialization\..), in the Sitecore instance they live in the App_Data folder.
+We use Unicorn to serialize Sitecore items. These yml files are not included in the Visual Studio project. In the development environment, these live in a git repository (e.g. c:\git\mysite\..\serialization\..), in the Sitecore instance, they live in the App_Data folder.
 
-Deployments with webdeploy, will set up the security descriptors (ACL) by default. This is mostly not needed and a relative slow process during deployment. This could be skipped.
+Deployments with web deploy will set up the security descriptors (ACL) by default. This is mostly not needed and a relatively slow process during deployment. This could be skipped.
 
-With Sitecore we use patch files to adjust the behavior of Sitecore. We also use some patch files to adjust Sitecore in a development environment e.g. set the serialization path to the c:\git\mysite\..\serialization\.. folder and patch out some pipelines that should only be used in a production environment.
+With Sitecore, we use patch files to adjust the behavior of Sitecore. We also use some patch files to adjust Sitecore in a development environment e.g. set the serialization path to the c:\git\mysite\..\serialization\.. folder and patch out some pipelines that should only be used in a production environment.
 
-On a local development environment we use Web Publishing to an IIS site within Visual Studio and on the test, acceptance and production environment we use Webdeploy.
+On a local development environment, we use Web Publishing to an IIS site within Visual Studio and on the test, acceptance, and production environment we use web deploy.
 
 ## Wpp.targets file to the rescue
 
@@ -39,7 +39,7 @@ Create a Project element as the top-level element, and within it create a Proper
 
 ## Keeping the deployments clean
 
-To exclude files and folders in local deployment and webdeploy we use the element ExcludeFilesFromDeployment.
+To exclude files and folders in local deployment and web deploy we use the element ExcludeFilesFromDeployment.
 
 This element is set within the PropertyGroup
 
@@ -68,7 +68,7 @@ This element is set within the PropertyGroup
 </PropertyGroup>
 ```
 
-To exclude files from packaging to the webdeploy packages, but still deploy to the local development environment with Visual Studio we use the element ExcludeFromPackageFiles. This is set within an ItemGroup element.
+To exclude files from packaging to the web deploy packages, but still deploy to the local development environment with Visual Studio we use the element ExcludeFromPackageFiles. This is set within an ItemGroup element.
 
 ```xml
 <ItemGroup>
@@ -78,7 +78,7 @@ To exclude files from packaging to the webdeploy packages, but still deploy to t
 </ItemGroup>
 ```
 
-To skip the security descriptors (ACL) we add the IncludeSetACLProviderOnDestination with value false in the propertygroup.
+To skip the security descriptors (ACL) we add the IncludeSetACLProviderOnDestination with value false in the property group.
 
 ```xml
 <IncludeSetACLProviderOnDestination>
@@ -88,7 +88,7 @@ To skip the security descriptors (ACL) we add the IncludeSetACLProviderOnDestina
 
 Now we only need to add our Unicorn yml files to the deployment package. We do not deploy them in a local development environment, because the local Sitecore development configuration (within the DevSettings.config) directs them to a c:\git\mysite\..\serialization\..
 
-First off all we define the files to include
+First, of all, we define the files to include
 
 ```xml
 <Target Name="DefineCustomFiles">
