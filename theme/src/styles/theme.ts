@@ -3,8 +3,8 @@ import { DefaultTheme } from "./default-theme"
 const colors = {
   primary: "#465775",
   secondary: "#C97064",
-  tertiary: "#C4C8CC",
-  link: "#D3D6D9",
+  tertiary: "#E9EAEC",
+  link: "#E9EAEC",
   text: "#2D2D2D",
   background: "#fafafa",
 }
