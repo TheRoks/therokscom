@@ -5,14 +5,14 @@ import { MenuItem } from "../../utils/models"
 
 interface HeaderProps {
   title: string
-  description: string
+  subtitle: string
   menu: MenuItem[]
   search: boolean
 }
 
 const Header: FunctionComponent<HeaderProps> = ({
   title,
-  description,
+  subtitle,
   menu,
   search = true,
 }) => {
@@ -21,7 +21,7 @@ const Header: FunctionComponent<HeaderProps> = ({
       <StyledNavigation title={title} menu={menu} showSearch={search} />
       <TitleWrapper>
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        <Description>{subtitle}</Description>
       </TitleWrapper>
     </StyledHeader>
   )

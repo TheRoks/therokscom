@@ -1,7 +1,7 @@
 ---
 title: "Introducing Roslyn analyzers for Sitecore"
 path: "/introducing-roslyn-analyzers-for-sitecore/"
-tags: ["Sitecore", "Roslyn analyzers", "Visual Studio"]
+tags: ["Sitecore", "Roslyn", "Visual Studio", "dotNet"]
 excerpt: Introducing Roslyn analyzers for Sitecore. Using these analyzers will help you to analyze your project's source to find common issues.
 created: 2021-01-28
 updated: 2021-01-28

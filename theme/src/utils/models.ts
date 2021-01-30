@@ -2,6 +2,7 @@ export interface SiteMetadata {
   site: {
     siteMetadata: {
       title: string
+      subtitle: string
       siteUrl: string
       description: string
       menu: MenuItem[]

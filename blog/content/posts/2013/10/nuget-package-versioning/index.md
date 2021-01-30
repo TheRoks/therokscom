@@ -1,7 +1,7 @@
 ---
 title: "How to: NuGet package versioning"
 path: "/nuget-package-versioning/"
-tags: ["dotNET"]
+tags: ["dotNET", "NuGet"]
 excerpt: "Build automatically NuGet packages with a buildserver. Use there for the right versioning technique. It can save you a lot of troubles."
 created: 2013-10-24
 updated: 2013-10-24

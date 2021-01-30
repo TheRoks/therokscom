@@ -18,3 +18,35 @@
   color: "#008ad7"
   icon: ./assets/images/azure-devops.png
   featured: false
+- name: Powershell
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: git
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: VSCode
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: Azure
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: Visual Studio
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: Roslyn
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: Unit tests
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false
+- name: NuGet
+  color: "#2D2D2D"
+  icon: ./assets/images/logo.png
+  featured: false

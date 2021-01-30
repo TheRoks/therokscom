@@ -34,6 +34,7 @@ const SEO: FunctionComponent<SEOProps> = ({
       site {
         siteMetadata {
           title
+          subtitle
           siteUrl
           description
           author {
@@ -49,7 +50,9 @@ const SEO: FunctionComponent<SEOProps> = ({
     }
   `)
   const metadata = site.siteMetadata
-  const siteTitle = title ? `${title} - ${metadata.title}` : metadata.title
+  const siteTitle = title
+    ? `${title} - ${metadata.title}`
+    : `${metadata.title} - ${metadata.subtitle}`
   const metaDescription = description ? description : metadata.description
   const metaImage = image ? `${metadata.siteUrl}${image}` : null
   const canonical = url.resolve(metadata.siteUrl, location.pathname)

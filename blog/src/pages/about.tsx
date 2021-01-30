@@ -116,7 +116,11 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
   const certifications = useStaticQuery<Result>(cerification)
   return (
     <Layout bigHeader={false}>
-      <SEO location={location} title={`About me`} />
+      <SEO
+        location={location}
+        title={`About me`}
+        description={`Stefan Roks's personal blog on .NET Development.`}
+      />
       <Subheader title={`About Me`} />
       <PageContainer>
         <AboutMe>

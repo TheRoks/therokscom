@@ -20,6 +20,7 @@ const Layout: FunctionComponent<LayoutProps> = ({
       site {
         siteMetadata {
           title
+          subtitle
           description
           menu {
             name
@@ -41,7 +42,7 @@ const Layout: FunctionComponent<LayoutProps> = ({
       {bigHeader ? (
         <Header
           title={data.site.siteMetadata.title}
-          description={data.site.siteMetadata.description}
+          subtitle={data.site.siteMetadata.subtitle}
           menu={data.site.siteMetadata.menu}
           search={data.site.siteMetadata.search}
         />

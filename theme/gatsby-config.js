@@ -20,7 +20,8 @@ module.exports = (themeOptions) => {
   return {
     siteMetadata: {
       title: `theroks`,
-      siteUrl: `https://theroks-blogtheme.netlify.com`,
+      subtitle: `Personal blog`,
+      siteUrl: `https://theroks.com`,
       description: `A Gatsby theme for everyone`,
       menu: [
         {
@@ -199,8 +200,8 @@ module.exports = (themeOptions) => {
               resolve: "gatsby-remark-external-links",
               options: {
                 target: "_blank",
-                rel: "nofollow noopener"
-              }
+                rel: "nofollow noopener",
+              },
             },
             `gatsby-remark-static-images`,
           ],
