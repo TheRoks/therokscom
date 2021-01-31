@@ -71,6 +71,7 @@ module.exports = (themeOptions) => {
         resolve: `gatsby-plugin-manifest`,
         options: manifest,
       },
+      `gatsby-plugin-offline`,
       {
         resolve: `gatsby-source-filesystem`,
         options: {

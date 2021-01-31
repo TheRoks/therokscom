@@ -56,7 +56,40 @@ module.exports = {
           background_color: `#465775`,
           theme_color: `#465775`,
           display: `minimal-ui`,
-          icon: `${__dirname}/content/assets/images/icon.png`,
+          icon: `${__dirname}/content/assets/images/logo.png`,
+          icons: [
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x300.png`,
+              sizes: "300x300",
+              type: "image/png",
+            },
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x72.png`,
+              sizes: "72x72",
+              type: "image/png",
+            },
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x96.png`,
+              sizes: "96x96",
+              type: "image/png",
+            },
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x128.png`,
+              sizes: "128x128",
+              type: "image/png",
+            },
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x144.png`,
+              sizes: "144x144",
+              type: "image/png",
+            },
+            {
+              src: `${__dirname}/content/assets/images/maskable_icon_x152.png`,
+              sizes: "152x152",
+              type: "image/png",
+              purpose: "any maskable",
+            },
+          ],
         },
       },
     },
