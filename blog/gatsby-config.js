@@ -91,6 +91,9 @@ module.exports = {
             },
           ],
         },
+        rssFeed: {
+          title: `TheRoks.com`
+        }
       },
     },
     {

@@ -16,6 +16,9 @@ module.exports = (themeOptions) => {
         icon: `${__dirname}/assets/theroks-gatsby.png`,
       }
   const assetsPath = themeOptions.assetsPath || `${__dirname}/assets`
+  const rssFeed = themeOptions.rssFeed || {
+    title: `Rss Feed`
+  }
 
   return {
     siteMetadata: {
@@ -269,7 +272,7 @@ module.exports = (themeOptions) => {
               }
               `,
               output: `/rss.xml`,
-              title: `RSS Feed`,
+              title: rssFeed.title,
             },
           ],
         },
