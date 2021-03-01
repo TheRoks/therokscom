@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@theroks/gatsby-theme-blog": "*",
-    "gatsby": "^2.31.1",
+    "gatsby": "^2.32.8",
     "gatsby-plugin-google-analytics": "^2.10.0",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-robots-txt": "^1.5.5",
