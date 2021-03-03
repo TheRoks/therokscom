@@ -35,7 +35,7 @@ export default ArchivePage
 export const query = graphql`
   query {
     allPosts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\.md$/" } }
       sort: { fields: frontmatter___created, order: DESC }
     ) {
       edges {
@@ -50,9 +50,12 @@ export const query = graphql`
             createdPretty: created(formatString: "DD MMMM, YYYY")
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 500, quality: 70) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  aspectRatio: 2.1
+                  width: 400
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }

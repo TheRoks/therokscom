@@ -16,14 +16,14 @@
   },
   "dependencies": {
     "@theroks/gatsby-theme-blog": "*",
-    "gatsby": "^2.31.1",
-    "gatsby-plugin-google-analytics": "^2.10.0",
+    "gatsby": "^3.0.2",
+    "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.6.1"
+    "@lhci/cli": "^0.7.0"
   }
 }

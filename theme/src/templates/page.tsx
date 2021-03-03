@@ -9,7 +9,7 @@ import PageSidebarContent from "../components/page-sidebar-content"
 import SEO from "../components/seo"
 
 interface PageTemplateProps {
-  pathContext: {
+  pageContext: {
     page: Page
   }
   location: Location
@@ -43,10 +43,10 @@ const PageSidebar = styled.aside`
 `
 
 const PageTemplate: FunctionComponent<PageTemplateProps> = ({
-  pathContext,
+  pageContext,
   location,
 }) => {
-  const page = pathContext.page
+  const page = pageContext.page
 
   return (
     <Layout bigHeader={false}>

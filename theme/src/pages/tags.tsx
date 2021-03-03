@@ -6,7 +6,7 @@ import { Tag } from "../utils/models"
 import { Card } from "../components/card"
 import slugify from "slugify"
 import { Grid } from "../components/common"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import SEO from "../components/seo"
 
@@ -44,7 +44,7 @@ const TagsPage: FunctionComponent<TagsPageProps> = ({ data, location }) => {
           >
             {/* gatsby-image doesn't handle SVGs, hence we need to take care of it */}
             {tag.icon.extension !== "svg" ? (
-              <Img fixed={tag.icon.childImageSharp.fixed} />
+              <GatsbyImage image={tag.icon.childImageSharp.gatsbyImageData} />
             ) : (
               <TagSvgIcon src={tag.icon.publicURL} alt={tag.name} />
             )}
@@ -66,9 +66,7 @@ export const query = graphql`
           name
           icon {
             childImageSharp {
-              fixed(height: 55) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(layout: FIXED)
             }
             extension
             publicURL

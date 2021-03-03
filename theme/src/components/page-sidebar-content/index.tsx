@@ -23,7 +23,7 @@ const PageSidebarContent: FunctionComponent = () => {
   const latestPosts = useStaticQuery(graphql`
     query {
       posts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\.md$/" } }
         sort: { fields: frontmatter___created, order: DESC }
         limit: 3
       ) {
@@ -39,9 +39,7 @@ const PageSidebarContent: FunctionComponent = () => {
               excerpt
               featuredImage {
                 childImageSharp {
-                  fixed(width: 315, height: 100) {
-                    ...GatsbyImageSharpFixed
-                  }
+                  gatsbyImageData(layout: FIXED, width: 315, height: 100)
                 }
               }
             }

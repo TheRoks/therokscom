@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 import Theme from "../styles/theme"
 
 interface PostsPageProps {
-  pathContext: {
+  pageContext: {
     posts: Post[]
     postsPerPage: number
   }
@@ -77,10 +77,10 @@ const ArchiveLink = styled(Link)`
 `
 
 const PostsPage: FunctionComponent<PostsPageProps> = ({
-  pathContext,
+  pageContext,
   location,
 }) => {
-  const posts = pathContext.posts.slice(0, pathContext.postsPerPage)
+  const posts = pageContext.posts.slice(0, pageContext.postsPerPage)
 
   return (
     <Layout>
@@ -107,7 +107,6 @@ const PostsPage: FunctionComponent<PostsPageProps> = ({
                     : null,
               }}
               style={{ gridArea: index === 0 ? "latest" : undefined }}
-              halfImage={index === 0}
             />
           ))}
           <ArchiveLinkWrapper>

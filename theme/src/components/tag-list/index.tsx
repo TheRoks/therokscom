@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { Tag } from "../../utils/models"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import slugify from "slugify"
 import {
   StyledTag,
@@ -22,9 +22,7 @@ const TagList: FunctionComponent = () => {
           name
           icon {
             childImageSharp {
-              fixed(height: 55) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(layout: FIXED, height: 55)
             }
             extension
             publicURL
@@ -46,7 +44,9 @@ const TagList: FunctionComponent = () => {
               <Link to={`/tag/${slugify(tag.name, { lower: true })}`}>
                 {/* gatsby-image doesn't handle SVGs, hence we need to take care of it */}
                 {icon.extension !== "svg" ? (
-                  <Img fixed={tag.icon.childImageSharp.fixed} />
+                  <GatsbyImage
+                    image={tag.icon.childImageSharp.gatsbyImageData}
+                  />
                 ) : (
                   <TagIcon src={icon.publicURL} alt={tag.name} />
                 )}

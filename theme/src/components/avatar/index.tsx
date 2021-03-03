@@ -1,7 +1,7 @@
 import React, { CSSProperties, FunctionComponent } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface AvatarProps {
   alt: string
@@ -10,7 +10,7 @@ interface AvatarProps {
   fixed: any
 }
 
-const StyledAvatar = styled(Img)<AvatarProps>`
+const StyledAvatar = styled(GatsbyImage)<AvatarProps>`
   max-width: 55px;
   border-radius: 100%;
 `
@@ -26,9 +26,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({ alt, style }) => {
         name: { eq: "profile" }
       ) {
         childImageSharp {
-          fixed(width: 55, height: 55) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 55, height: 55)
         }
       }
       siteProfile: file(
@@ -36,9 +34,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({ alt, style }) => {
         name: { eq: "profile" }
       ) {
         childImageSharp {
-          fixed(width: 55, height: 55) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 55, height: 55)
         }
       }
     }
@@ -46,10 +42,10 @@ const Avatar: FunctionComponent<AvatarProps> = ({ alt, style }) => {
 
   return (
     <StyledAvatar
-      fixed={
+      image={
         logo.siteProfile
-          ? logo.siteProfile.childImageSharp.fixed
-          : logo.themeProfile.childImageSharp.fixed
+          ? logo.siteProfile.childImageSharp.gatsbyImageData
+          : logo.themeProfile.childImageSharp.gatsbyImageData
       }
       alt={alt}
       style={style}
