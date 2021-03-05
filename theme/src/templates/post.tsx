@@ -92,6 +92,10 @@ const PostContent = styled.div`
     line-height: 1.2;
   }
 
+  h3 {
+    z-index: -999;
+  }
+
   h2 > a.anchor.before,
   h3 > a.anchor.before,
   h4 > a.anchor.before,
