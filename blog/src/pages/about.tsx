@@ -7,12 +7,13 @@ import Subheader from "@theroks/gatsby-theme-blog/src/components/subheader"
 import styled from "styled-components"
 import Theme from "@theroks/gatsby-theme-blog/src/styles/theme"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface AboutProps {
   location: Location
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface CertificationProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fixed: any
@@ -65,7 +66,7 @@ interface Logo {
 
 interface ChildImageSharp {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fixed: any
+  gatsbyImageData: any
 }
 
 const cerification = graphql`
@@ -75,9 +76,7 @@ const cerification = graphql`
       name: { eq: "microsoft-certified-azure-administrator-associate" }
     ) {
       childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 100, height: 100)
       }
     }
     developer: file(
@@ -85,9 +84,7 @@ const cerification = graphql`
       name: { eq: "microsoft-certified-azure-developer-associate" }
     ) {
       childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 100, height: 100)
       }
     }
     architect: file(
@@ -95,9 +92,7 @@ const cerification = graphql`
       name: { eq: "microsoft-certified-azure-solutions-architect-expert" }
     ) {
       childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 100, height: 100)
       }
     }
   }
@@ -105,12 +100,10 @@ const cerification = graphql`
 
 interface LogoProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fixed: any
+  image: any
 }
 
-const StyledLogo = styled(Img)<LogoProps>`
-  max-width: 100px;
-`
+const StyledLogo = styled(GatsbyImage)<LogoProps>``
 
 const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
   const certifications = useStaticQuery<Result>(cerification)
@@ -144,7 +137,10 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
               rel="noreferrer noopener"
             >
               <StyledLogo
-                fixed={certifications.administrator.childImageSharp.fixed}
+                layout="fixed"
+                image={
+                  certifications.administrator.childImageSharp.gatsbyImageData
+                }
               />
             </a>
             <a
@@ -153,7 +149,7 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
               rel="noreferrer noopener"
             >
               <StyledLogo
-                fixed={certifications.developer.childImageSharp.fixed}
+                image={certifications.developer.childImageSharp.gatsbyImageData}
               />
             </a>
             <a
@@ -162,7 +158,7 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
               rel="noreferrer noopener"
             >
               <StyledLogo
-                fixed={certifications.architect.childImageSharp.fixed}
+                image={certifications.architect.childImageSharp.gatsbyImageData}
               />
             </a>
           </div>

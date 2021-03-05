@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Theme from "../../styles/theme"
-import Img from "gatsby-image"
-import { CardProps } from "./index"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const StyledCard = styled(Link)`
   display: block;
@@ -29,33 +28,15 @@ export const StyledArticle = styled.article`
   }
 `
 
-export const FeaturedImage = styled(Img)<Pick<CardProps, "halfImage">>`
+export const FeaturedImage = styled(GatsbyImage)`
   background-position: center;
   background-size: cover;
   max-width: 100%;
   border-top-left-radius: 3px;
-
-  ${(props) =>
-    props.halfImage
-      ? `
-    width: 50%;
-    float: left;
-    margin-right: 30px;
-    height: 320px;
-    border-bottom-left-radius: 3px;
-
-    @media (max-width: ${Theme.breakpoints.sm}) {
-      width: 100%;
-      float: none;
-      height: 190px;
-    }
-  `
-      : `
-    height: 190px;
-    max-height: 190px;
-    width: 100%;
-    border-top-right-radius: 3px;
-  `};
+  height: 190px;
+  max-height: 190px;
+  width: 100%;
+  border-top-right-radius: 3px;
 `
 
 export const CardContent = styled.section<{ compact: boolean }>`

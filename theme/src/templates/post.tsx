@@ -4,7 +4,7 @@ import { Post, Tag } from "../utils/models"
 import { Container } from "../components/common"
 import styled from "styled-components"
 import Toc from "../components/toc"
-import Img from "gatsby-image"
+import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 import ReadingProgress from "../components/reading-progress"
 import Theme from "../styles/theme"
 import { graphql, Link } from "gatsby"
@@ -141,7 +141,7 @@ const PostHeader = styled.header`
   }
 `
 
-const FeaturedImage = styled(Img)`
+const FeaturedImage = styled(GatsbyImage)`
   border-radius: 0;
 
   @media (max-width: ${Theme.breakpoints.xl}) {
@@ -243,6 +243,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
   const primaryTag = data.primaryTag
   const toggleToc = () => setShowToc(!showToc)
 
+  const src = getSrc(post.frontmatter.featuredImage)
   return (
     <Layout bigHeader={false}>
       <SEO
@@ -252,11 +253,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
         updatedAt={post.frontmatter.updated}
         tags={post.frontmatter.tags}
         description={post.frontmatter.excerpt}
-        image={
-          post.frontmatter.featuredImage
-            ? post.frontmatter.featuredImage.childImageSharp.fluid.src
-            : null
-        }
+        image={post.frontmatter.featuredImage ? src : undefined}
       />
       <ReadingProgress
         target={readingProgressRef}
@@ -300,7 +297,10 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
             </PostHeader>
             {post.frontmatter.featuredImage && (
               <FeaturedImage
-                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={post.frontmatter.title}
+                image={
+                  post.frontmatter.featuredImage.childImageSharp.gatsbyImageData
+                }
               />
             )}
             <StyledPost
@@ -369,9 +369,12 @@ export const query = graphql`
         updatedPretty: updated(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800, quality: 70) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              aspectRatio: 3.3
+              width: 1003
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }

@@ -2,13 +2,13 @@ import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Theme from "../../styles/theme"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface LogoProps {
   title: string
 }
 
-const LogoImage = styled(Img)`
+const LogoImage = styled(GatsbyImage)`
   max-height: 30px;
   width: 30px;
   margin-right: 45px;
@@ -31,9 +31,7 @@ const Logo: FunctionComponent<LogoProps> = ({ title }) => {
         name: { eq: "theroks-gatsby" }
       ) {
         childImageSharp {
-          fixed(width: 30, height: 30) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(layout: FIXED, width: 30, height: 30)
         }
       }
     }
@@ -41,7 +39,10 @@ const Logo: FunctionComponent<LogoProps> = ({ title }) => {
 
   return (
     <HomeLink to={`/`}>
-      <LogoImage fixed={logo.file.childImageSharp.fixed} alt={title} />
+      <LogoImage
+        image={logo.file.childImageSharp.gatsbyImageData}
+        alt={title}
+      />
     </HomeLink>
   )
 }

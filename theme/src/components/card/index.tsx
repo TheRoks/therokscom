@@ -19,7 +19,6 @@ export interface CardProps {
     timePretty: string
     tag: string | null
   }
-  halfImage?: boolean
   compact?: boolean
   style?: CSSProperties
   children?: ReactNode
@@ -31,18 +30,14 @@ export const Card: FunctionComponent<CardProps> = ({
   path,
   featuredImage,
   content,
-  halfImage = false,
   compact = false,
   style,
   children,
 }) => (
   <StyledArticle style={style}>
     <StyledCard to={path}>
-      {featuredImage && featuredImage.fixed && (
-        <FeaturedImage fixed={featuredImage.fixed} halfImage={halfImage} />
-      )}
-      {featuredImage && featuredImage.fluid && (
-        <FeaturedImage fluid={featuredImage.fluid} halfImage={halfImage} />
+      {featuredImage && featuredImage.gatsbyImageData && (
+        <FeaturedImage alt={`${title}`} image={featuredImage.gatsbyImageData} />
       )}
       <CardContent compact={compact}>
         {children}

@@ -17,7 +17,7 @@ module.exports = (themeOptions) => {
       }
   const assetsPath = themeOptions.assetsPath || `${__dirname}/assets`
   const rssFeed = themeOptions.rssFeed || {
-    title: `Rss Feed`
+    title: `Rss Feed`,
   }
 
   return {
@@ -69,6 +69,7 @@ module.exports = (themeOptions) => {
       `gatsby-transformer-sharp`,
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-styled-components`,
+      `gatsby-plugin-image`,
       `gatsby-plugin-sharp`,
       {
         resolve: `gatsby-plugin-manifest`,
@@ -167,24 +168,6 @@ module.exports = (themeOptions) => {
               path: (node) => node.frontmatter.path,
             },
           },
-        },
-      },
-      {
-        resolve: `gatsby-plugin-webfonts`,
-        options: {
-          fonts: {
-            google: [
-              {
-                family: "Montserrat",
-                variants: ["regular"],
-                subsets: ["latin"],
-                fontDisplay: "swap",
-                strategy: "selfHosted",
-              },
-            ],
-          },
-          useMinify: false,
-          usePreload: true,
         },
       },
       {
