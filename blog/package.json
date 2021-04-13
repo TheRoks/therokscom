@@ -16,14 +16,14 @@
   },
   "dependencies": {
     "@theroks/gatsby-theme-blog": "*",
-    "gatsby": "^3.0.2",
-    "gatsby-plugin-google-analytics": "^3.0.0",
-    "gatsby-plugin-preconnect": "^1.1.54",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-google-analytics": "^3.2.0",
+    "gatsby-plugin-preconnect": "^1.2.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.7.0"
+    "@lhci/cli": "^0.7.1"
   }
 }
