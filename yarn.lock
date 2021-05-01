@@ -1669,12 +1669,12 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@lhci/cli@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.7.1.tgz#d4a9cd5995ea71fd35679afa3876338cdf1718ce"
-  integrity sha512-hTecqKDOU5d7As+GxCrhmOI+m40ru+U7p5dIa8mNvEJabM0Klcb3NgbXzgbyiU7fxSCJR0Zq9xAAWJjVeXH+3g==
+"@lhci/cli@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.7.2.tgz#ea4374a0e8adcef522a9f12cd926053bc68d5940"
+  integrity sha512-WE/1YPzlUUtGEm3KWr8rP09w6TNOfpa+dUm+EYpIm+xVtJHgcVKuVURrrQ4SXN9jy36V+aAfnKOQdvOdqel5QA==
   dependencies:
-    "@lhci/utils" "0.7.1"
+    "@lhci/utils" "0.7.2"
     chrome-launcher "^0.13.4"
     compression "^1.7.4"
     debug "^4.3.1"
@@ -1690,10 +1690,10 @@
     yargs "^15.4.1"
     yargs-parser "^13.1.2"
 
-"@lhci/utils@0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@lhci/utils/-/utils-0.7.1.tgz#9d5065edcae4e8275b3bbd8538078306e38fd20f"
-  integrity sha512-F/NbkqESj0Bsba/CSqrfrfcblYcmPH4DFJQA5sOIHdoK+cpSI2lGoYo4WbcQe44B/kZQ+CrOA5X9Jhyhos/u7g==
+"@lhci/utils@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@lhci/utils/-/utils-0.7.2.tgz#81985a35f4b96f19b6aac138b669a6f1485f67f3"
+  integrity sha512-KqqF8lPkRpFflfBY6MQLBOfqymMAj6GnOkE54kbZnRwmtgceSSzPa80/fNd/z1T8j/oWT6DQAkA+yLbPcTMQrQ==
   dependencies:
     debug "^4.3.1"
     isomorphic-fetch "^3.0.0"
@@ -11208,18 +11208,10 @@ open@^6.4.0:
   dependencies:
     is-wsl "^1.1.0"
 
-open@^7.0.2, open@^7.0.3:
+open@^7.0.2, open@^7.0.3, open@^7.1.0:
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/open/-/open-7.4.2.tgz#b8147e26dcf3e426316c730089fd71edd29c2321"
   integrity sha512-MVHddDVweXZF3awtlAS+6pgKLlm/JgxZ90+/NBurBoQctVOOB/zDdVjcyPzQ+0laDGbsWgrRkflI65sQeOgT9Q==
-  dependencies:
-    is-docker "^2.0.0"
-    is-wsl "^2.1.1"
-
-open@^7.1.0:
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/open/-/open-7.3.1.tgz#111119cb919ca1acd988f49685c4fdd0f4755356"
-  integrity sha512-f2wt9DCBKKjlFbjzGb8MOAW8LH8F0mrs1zc7KTjAJ9PZNQbfenzWbNP1VZJvw6ICMG9r14Ah6yfwPn7T7i646A==
   dependencies:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
@@ -16450,20 +16442,10 @@ yargs-parser@^18.1.2, yargs-parser@^18.1.3:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs-parser@^20.2.2:
+yargs-parser@^20.2.2, yargs-parser@^20.2.3, yargs-parser@^20.2.4:
   version "20.2.7"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.7.tgz#61df85c113edfb5a7a4e36eb8aa60ef423cbc90a"
   integrity sha512-FiNkvbeHzB/syOjIUxFDCnhSfzAL8R5vs40MgLFBorXACCOAEaWu0gRZl14vG8MR9AOJIZbmkjhusqBYZ3HTHw==
-
-yargs-parser@^20.2.3:
-  version "20.2.4"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.4.tgz#b42890f14566796f85ae8e3a25290d205f154a54"
-  integrity sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
-
-yargs-parser@^20.2.4:
-  version "20.2.6"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.6.tgz#69f920addf61aafc0b8b89002f5d66e28f2d8b20"
-  integrity sha512-AP1+fQIWSM/sMiET8fyayjx/J+JmTPt2Mr0FkrgqB4todtfa53sOsrSAcIrJRD5XS20bKUwaDIuMkWKCEiQLKA==
 
 yargs@^13.3.2:
   version "13.3.2"
