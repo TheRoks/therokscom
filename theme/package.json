@@ -48,7 +48,7 @@
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-sitemap": "^3.2.0",
     "gatsby-plugin-styled-components": "^4.2.0",
-    "gatsby-plugin-typescript": "^3.2.0",
+    "gatsby-plugin-typescript": "^3.4.0",
     "gatsby-remark-autolink-headers": "^3.2.0",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^4.2.0",
