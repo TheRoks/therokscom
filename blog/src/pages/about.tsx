@@ -118,26 +118,52 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
       <PageContainer>
         <AboutMe>
           <div style={{ paddingLeft: "15px" }}>
-            <h2>Hi! I&apos;m Stefan Roks 👋</h2>
+            <h2>
+              Hi! I&apos;m Stefan Roks{" "}
+              <span role="img" aria-label="Welcome">
+                👋
+              </span>
+            </h2>
             <ul style={{ listStyleType: "none", padding: 0, marginBottom: 0 }}>
-              <li>🏡 I live in Utrecht, The Netherlands. </li>
-              <li>🎓 I have a bachelor degree in Computer Science. </li>
               <li>
-                👩🏻‍💻 I&apos;ve been working as a .NET Developer and Sitecore
+                <span role="img" aria-label="My Location">
+                  🏡
+                </span>{" "}
+                I live in Utrecht, The Netherlands.{" "}
+              </li>
+              <li>
+                <span role="img" aria-label="My Study">
+                  🎓
+                </span>{" "}
+                I have a bachelor degree in Computer Science.{" "}
+              </li>
+              <li>
+                <span role="img" aria-label="My Work">
+                  👩🏻‍💻
+                </span>{" "}
+                I&apos;ve been working as a .NET Developer and Sitecore
                 developer.
               </li>
               <li>
-                👩🏻‍💻 Currently working as a Sitecore lead at Centraal Beheer.
+                <span role="img" aria-label="My Working position">
+                  👩🏻‍💻
+                </span>{" "}
+                Currently working as a Sitecore lead at Centraal Beheer.
               </li>
             </ul>
-            <h3>📜Certifications</h3>
+            <h3>
+              <span role="img" aria-label="My Certifications">
+                📜
+              </span>
+              Certifications
+            </h3>
             <a
               target="_blank"
               href="https://www.youracclaim.com/badges/72a91d44-74ec-4cbd-a746-12bf5ee239db"
               rel="noreferrer noopener"
             >
               <StyledLogo
-                layout="fixed"
+                alt="Certificate"
                 image={
                   certifications.administrator.childImageSharp.gatsbyImageData
                 }
@@ -149,6 +175,7 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
               rel="noreferrer noopener"
             >
               <StyledLogo
+                alt="Certificate"
                 image={certifications.developer.childImageSharp.gatsbyImageData}
               />
             </a>
@@ -158,6 +185,7 @@ const AboutPage: FunctionComponent<AboutProps> = ({ location }) => {
               rel="noreferrer noopener"
             >
               <StyledLogo
+                alt="Certificate"
                 image={certifications.architect.childImageSharp.gatsbyImageData}
               />
             </a>
