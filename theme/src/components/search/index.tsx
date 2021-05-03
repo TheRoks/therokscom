@@ -139,7 +139,6 @@ export const Search: FunctionComponent = () => {
         <SearchBox open={isOpen} ref={searchRef}>
           <SearchInput
             placeholder={`Search...`}
-            autoFocus={true}
             ref={inputRef}
             value={query}
             onChange={search}

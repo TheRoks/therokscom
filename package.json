@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace blog build",
+    "clean": "yarn workspace blog clean",
     "develop": "yarn workspace blog develop",
     "serve": "yarn workspace blog serve",
     "lint": "yarn workspace @theroks/gatsby-theme-blog lint && yarn workspace blog lint",
