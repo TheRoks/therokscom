@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "@theroks/gatsby-theme-blog": "*",
-    "gatsby": "^3.4.0",
-    "gatsby-plugin-google-analytics": "^3.4.0",
+    "gatsby": "^3.5.0",
+    "gatsby-plugin-google-analytics": "^3.5.0",
     "gatsby-plugin-preconnect": "^1.2.0",
-    "gatsby-plugin-robots-txt": "^1.5.6",
+    "gatsby-plugin-robots-txt": "^1.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

@@ -64,6 +64,7 @@ module.exports = (themeOptions) => {
         profile: `${__dirname}/assets/theroks-gatsby.png`,
       },
     },
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     plugins: [
       `gatsby-plugin-typescript`,
       `gatsby-transformer-sharp`,
@@ -104,44 +105,9 @@ module.exports = (themeOptions) => {
         },
       },
       {
-        resolve: `gatsby-plugin-sitemap`,
+        resolve: `gatsby-plugin-advanced-sitemap`,
         options: {
           output: `/sitemap.xml`,
-          exclude: [
-            "/404/",
-            "/archive",
-            "/tags",
-            "404.html",
-            "/tag/*",
-            "/dev-404-page/",
-          ],
-          // Exclude specific pages or groups of pages using glob parameters
-          // See: https://github.com/isaacs/minimatch
-          // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-          query: `
-            {
-              site {
-                siteMetadata {
-                  siteUrl
-                }
-              }
-
-              allSitePage {
-                edges {
-                  node {
-                    path
-                  }
-                }
-              }
-          }`,
-          serialize: ({ site, allSitePage }) =>
-            allSitePage.edges.map((edge) => {
-              return {
-                url: site.siteMetadata.siteUrl + edge.node.path,
-                changefreq: `daily`,
-                priority: 0.7,
-              }
-            }),
         },
       },
       {
