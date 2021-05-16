@@ -105,9 +105,53 @@ module.exports = (themeOptions) => {
         },
       },
       {
-        resolve: `gatsby-plugin-advanced-sitemap`,
+        resolve: `gatsby-plugin-sitemap`,
         options: {
-          output: `/sitemap.xml`,
+          output: `/`,
+          excludes: [
+            "/404/",
+            "/archive",
+            "/tags",
+            "404.html",
+            "/tag/*",
+            "/dev-404-page/",
+          ],
+          query: `
+            {
+              site {
+                siteMetadata {
+                  siteUrl
+                }
+              }
+              allSitePage: allMarkdownRemark {
+              nodes: edges {
+                node {
+                  frontmatter {
+                    modifiedGmt: updated
+                    path
+                  }
+                }
+              }
+            }
+          }`,
+          resolveSiteUrl: ({ site: { siteMetadata } }) => siteMetadata.siteUrl,
+          resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+            return allPages.map((node) => {
+              const frontmatter = node.node.frontmatter
+              return { ...frontmatter }
+            })
+          },
+          filterPages: ({}) => {
+            return false
+          },
+          serialize: ({ path, modifiedGmt }) => {
+            return {
+              url: path,
+              changefreq: `daily`,
+              priority: 0.7,
+              lastmod: modifiedGmt,
+            }
+          },
         },
       },
       {
