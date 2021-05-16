@@ -141,7 +141,7 @@ module.exports = (themeOptions) => {
               return { ...frontmatter }
             })
           },
-          filterPages: ({}) => {
+          filterPages: () => {
             return false
           },
           serialize: ({ path, modifiedGmt }) => {
