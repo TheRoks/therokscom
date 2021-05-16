@@ -64,6 +64,7 @@ module.exports = (themeOptions) => {
         profile: `${__dirname}/assets/theroks-gatsby.png`,
       },
     },
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     plugins: [
       `gatsby-plugin-typescript`,
       `gatsby-transformer-sharp`,
@@ -106,8 +107,8 @@ module.exports = (themeOptions) => {
       {
         resolve: `gatsby-plugin-sitemap`,
         options: {
-          output: `/sitemap.xml`,
-          exclude: [
+          output: `/`,
+          excludes: [
             "/404/",
             "/archive",
             "/tags",
@@ -115,9 +116,6 @@ module.exports = (themeOptions) => {
             "/tag/*",
             "/dev-404-page/",
           ],
-          // Exclude specific pages or groups of pages using glob parameters
-          // See: https://github.com/isaacs/minimatch
-          // The example below will exclude the single `path/to/page` and all routes beginning with `category`
           query: `
             {
               site {
@@ -125,23 +123,35 @@ module.exports = (themeOptions) => {
                   siteUrl
                 }
               }
-
-              allSitePage {
-                edges {
-                  node {
+              allSitePage: allMarkdownRemark {
+              nodes: edges {
+                node {
+                  frontmatter {
+                    modifiedGmt: updated
                     path
                   }
                 }
               }
+            }
           }`,
-          serialize: ({ site, allSitePage }) =>
-            allSitePage.edges.map((edge) => {
-              return {
-                url: site.siteMetadata.siteUrl + edge.node.path,
-                changefreq: `daily`,
-                priority: 0.7,
-              }
-            }),
+          resolveSiteUrl: ({ site: { siteMetadata } }) => siteMetadata.siteUrl,
+          resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+            return allPages.map((node) => {
+              const frontmatter = node.node.frontmatter
+              return { ...frontmatter }
+            })
+          },
+          filterPages: () => {
+            return false
+          },
+          serialize: ({ path, modifiedGmt }) => {
+            return {
+              url: path,
+              changefreq: `daily`,
+              priority: 0.7,
+              lastmod: modifiedGmt,
+            }
+          },
         },
       },
       {
