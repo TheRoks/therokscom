@@ -92,8 +92,8 @@ module.exports = {
           ],
         },
         rssFeed: {
-          title: `TheRoks.com`
-        }
+          title: `TheRoks.com`,
+        },
       },
     },
     {
@@ -121,7 +121,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://theroks.com",
-        sitemap: "https://theroks.com/sitemap.xml",
+        sitemap: "https://theroks.com/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
