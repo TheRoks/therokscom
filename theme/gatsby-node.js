@@ -55,7 +55,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
               updated
               updatedPretty: created(formatString: "DD MMMM, YYYY")
             }
-            html
           }
         }
       }
