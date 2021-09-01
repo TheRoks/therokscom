@@ -37,7 +37,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.0.27",
     "@mdx-js/react": "^1.0.27",
-    "@types/styled-components": "^5.1.11",
+    "@types/styled-components": "^5.1.13",
     "gatsby-plugin-feed": "^3.10.0",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-lunr": "^1.5.1",
