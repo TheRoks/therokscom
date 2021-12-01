@@ -14602,10 +14602,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-tocbot@^4.13.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.13.0.tgz#262f1c34f43a506bb4b3f7b7455a4762d163d867"
-  integrity sha512-usmeF93Yhn8+FknLNDMHN+O2TCT5eNZ8r6mSzms6jPwc1hXqr5c082qShNsePhO6I8eUT2XM8fyW/2iuqj25gg==
+tocbot@^4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.17.0.tgz#2b5f129d79c650e93f704eaa2f6892dfe3e4cca0"
+  integrity sha512-JaWPeib/qGUH+vqrEjL2AaUeitnshW/lLt0fsonMpcXcM4Jku0k3sVgMM0ZVLpbx9obcJQxRVe2Jql9dIFN1Nw==
 
 toidentifier@1.0.0:
   version "1.0.0"
