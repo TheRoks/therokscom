@@ -3,8 +3,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "settings": {
@@ -17,7 +15,7 @@
     "es2020": true,
     "node": true
   },
-  "plugins": ["@typescript-eslint", "react", "prettier", "jsx-a11y"],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -28,8 +26,7 @@
   "rules": {
     "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
     "@typescript-eslint/explicit-function-return-type": "off",
-    "react/display-name": "off",
-    "prettier/prettier": "error"
+    "react/display-name": "off"
   },
   "overrides": [
     // Override some TypeScript rules just for .js files

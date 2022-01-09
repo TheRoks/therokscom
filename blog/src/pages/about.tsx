@@ -13,12 +13,6 @@ interface AboutProps {
   location: Location
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface CertificationProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fixed: any
-}
-
 const AboutMe = styled.div`
   width: 100%;
   display: flex;

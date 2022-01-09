@@ -12,7 +12,7 @@ import {
 import { NavMenuItem, ToggleSearchButton } from "../navigation/style"
 import { navigate } from "gatsby"
 
-interface SearchResult {
+interface SearchResultProps {
   title: string
   content: string
   tags: string[]
@@ -23,7 +23,7 @@ interface SearchResult {
 export const Search: FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [query, setQuery] = useState<string>("")
-  const [results, setResults] = useState<SearchResult[]>([])
+  const [results, setResults] = useState<SearchResultProps[]>([])
   const [selected, setSelected] = useState<number>(0)
   const inputRef = useRef<HTMLInputElement>(null)
   const resultListRef = useRef<HTMLUListElement>(null)
