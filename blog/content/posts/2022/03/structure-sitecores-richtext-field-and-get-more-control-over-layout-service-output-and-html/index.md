@@ -40,8 +40,6 @@ First of all, we need to extend the Sitecore Layout service. By extending the La
 This configuration needs some implementation as well. In the `WriteValue` method we can add a new property, document, to the field. This property will get a structured JSON output. This will be done by the `RichTextParser`. The contents of the `RichTextParser` will be below.
 
 ```cs
-
-```cs
 public class GetRichTextFieldSerializer : BaseFieldSerializer
 {
     private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings()
