@@ -20,21 +20,21 @@ Goals to achieve in this blog post:
 First of all, we need to extend the Sitecore Layout service. By extending the Layout Service it will be possible to get more control over the output of the layout service. In the configuration below we will add a processor that will be executed when processing the content of a rich text field.
 
 ```xml
-  <pipelines>
-        <group groupName="layoutService">
-            <pipelines>
-                <getFieldSerializer>
-                    <processor patch:instead="processor[@type='Sitecore.LayoutService.Serialization.Pipelines.GetFieldSerializer.GetRichTextFieldSerializer, Sitecore.LayoutService']"
-                      type="TheRoks.Foundation.LayoutServiceExtensions.Pipelines.GetFieldSerializer.GetRichTextFieldSerializer, TheRoks.Foundation.LayoutServiceExtensions"
-                      resolve="true">
-                        <FieldTypes hint="list">
-                            <fieldType id="1">rich text</fieldType>
-                        </FieldTypes>
-                    </processor>
-                </getFieldSerializer>
-            </pipelines>
-        </group>
-    </pipelines>
+<pipelines>
+    <group groupName="layoutService">
+        <pipelines>
+            <getFieldSerializer>
+                <processor patch:instead="processor[@type='Sitecore.LayoutService.Serialization.Pipelines.GetFieldSerializer.GetRichTextFieldSerializer, Sitecore.LayoutService']"
+                  type="TheRoks.Foundation.LayoutServiceExtensions.Pipelines.GetFieldSerializer.GetRichTextFieldSerializer, TheRoks.Foundation.LayoutServiceExtensions"
+                  resolve="true">
+                    <FieldTypes hint="list">
+                        <fieldType id="1">rich text</fieldType>
+                    </FieldTypes>
+                </processor>
+            </getFieldSerializer>
+        </pipelines>
+    </group>
+</pipelines>
 ```
 
 This configuration needs some implementation as well. In the `WriteValue` method we can add a new property, document, to the field. This property will get a structured JSON output. This will be done by the `RichTextParser`. The contents of the `RichTextParser` will be below.
@@ -137,175 +137,175 @@ public class RichTextParser
 
 ```cs
 internal class HtmlElementToNodeParser<T> : IHtmlDocumentToNodeParser where T : Node, new()
+{
+    private Dictionary<string, IHtmlDocumentToNodeParser> _parsers => GetParsers();
+    private readonly Func<HtmlNode, List<Node>> _contentParser;
+    private readonly Func<HtmlNode, object> _dataParser;
+    private readonly Func<HtmlNode, string> _valueParser;
+    private readonly Func<HtmlNode, IEnumerable<Mark>> _marksParser;
+
+    internal HtmlElementToNodeParser(Func<HtmlNode, List<Node>> content = null,
+        Func<HtmlNode, object> data = null,
+        Func<HtmlNode, string> value = null,
+        Func<HtmlNode, IEnumerable<Mark>> marks = null)
     {
-        private Dictionary<string, IHtmlDocumentToNodeParser> _parsers => GetParsers();
-        private readonly Func<HtmlNode, List<Node>> _contentParser;
-        private readonly Func<HtmlNode, object> _dataParser;
-        private readonly Func<HtmlNode, string> _valueParser;
-        private readonly Func<HtmlNode, IEnumerable<Mark>> _marksParser;
+        _contentParser = content;
+        _dataParser = data;
+        _valueParser = value;
+        _marksParser = marks;
+    }
 
-        internal HtmlElementToNodeParser(Func<HtmlNode, List<Node>> content = null,
-            Func<HtmlNode, object> data = null,
-            Func<HtmlNode, string> value = null,
-            Func<HtmlNode, IEnumerable<Mark>> marks = null)
+    private Dictionary<string, IHtmlDocumentToNodeParser> GetParsers()
+    {
+        return new Dictionary<string, IHtmlDocumentToNodeParser>()
         {
-            _contentParser = content;
-            _dataParser = data;
-            _valueParser = value;
-            _marksParser = marks;
-        }
+            { "p", new HtmlElementToNodeParser<Paragraph>(content: DefaultContent) },
+            { "ul", new HtmlElementToNodeParser<UnorderedList>(content: DefaultContent) },
+            { "ol", new HtmlElementToNodeParser<OrderedList>(content: DefaultContent) },
+            { "li", new HtmlElementToNodeParser<ListItem>(content: DefaultContent) },
+            { "h1", new HtmlElementToNodeParser<Heading1>(content: DefaultContent) },
+            { "h2", new HtmlElementToNodeParser<Heading2>(content: DefaultContent) },
+            { "h3", new HtmlElementToNodeParser<Heading3>(content: DefaultContent) },
+            { "h4", new HtmlElementToNodeParser<Heading4>(content: DefaultContent) },
+            { "h5", new HtmlElementToNodeParser<Heading5>(content: DefaultContent) },
+            { "h6", new HtmlElementToNodeParser<Heading6>(content: DefaultContent) },
+            { "blockquote", new HtmlElementToNodeParser<Blockquote>(content: DefaultContent) },
+            { "hr", new HtmlElementToNodeParser<Hr>() },
+            { "a", new HtmlElementToNodeParser<Hyperlink>(content: DefaultContent, data: LinkData) },
+            { "img", new HtmlElementToNodeParser<Image>(content: DefaultContent, data: ImageData) },
+            { "b", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "u", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "i", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "em", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "code", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "strong", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
+            { "#text", new HtmlElementToNodeParser<Text>(value: ValueExitWhenEmpty, marks: EmptyMarks) },
+            { "span", new HtmlElementToNodeParser<Text>(value: ValueExitWhenEmpty, marks: EmptyMarks, content: DefaultContent) }
+        };
+    }
 
-        private Dictionary<string, IHtmlDocumentToNodeParser> GetParsers()
+    private static object ImageData(HtmlNode htmlNode)
+    {
+        return new ImageData
         {
-            return new Dictionary<string, IHtmlDocumentToNodeParser>()
-            {
-                { "p", new HtmlElementToNodeParser<Paragraph>(content: DefaultContent) },
-                { "ul", new HtmlElementToNodeParser<UnorderedList>(content: DefaultContent) },
-                { "ol", new HtmlElementToNodeParser<OrderedList>(content: DefaultContent) },
-                { "li", new HtmlElementToNodeParser<ListItem>(content: DefaultContent) },
-                { "h1", new HtmlElementToNodeParser<Heading1>(content: DefaultContent) },
-                { "h2", new HtmlElementToNodeParser<Heading2>(content: DefaultContent) },
-                { "h3", new HtmlElementToNodeParser<Heading3>(content: DefaultContent) },
-                { "h4", new HtmlElementToNodeParser<Heading4>(content: DefaultContent) },
-                { "h5", new HtmlElementToNodeParser<Heading5>(content: DefaultContent) },
-                { "h6", new HtmlElementToNodeParser<Heading6>(content: DefaultContent) },
-                { "blockquote", new HtmlElementToNodeParser<Blockquote>(content: DefaultContent) },
-                { "hr", new HtmlElementToNodeParser<Hr>() },
-                { "a", new HtmlElementToNodeParser<Hyperlink>(content: DefaultContent, data: LinkData) },
-                { "img", new HtmlElementToNodeParser<Image>(content: DefaultContent, data: ImageData) },
-                { "b", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "u", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "i", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "em", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "code", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "strong", new HtmlElementToNodeParser<Text>(marks: DefaultMarks, value: DefaultValue) },
-                { "#text", new HtmlElementToNodeParser<Text>(value: ValueExitWhenEmpty, marks: EmptyMarks) },
-                { "span", new HtmlElementToNodeParser<Text>(value: ValueExitWhenEmpty, marks: EmptyMarks, content: DefaultContent) }
-            };
-        }
+            Uri = htmlNode.GetAttributeValue("src", null),
+            Width = htmlNode.GetAttributeValue("width", null),
+            Height = htmlNode.GetAttributeValue("height", null),
+            Title = htmlNode.GetAttributeValue("title", null)
+        };
+    }
 
-        private static object ImageData(HtmlNode htmlNode)
+    private static object LinkData(HtmlNode htmlNode)
+    {
+        return new LinkData
         {
-            return new ImageData
-            {
-                Uri = htmlNode.GetAttributeValue("src", null),
-                Width = htmlNode.GetAttributeValue("width", null),
-                Height = htmlNode.GetAttributeValue("height", null),
-                Title = htmlNode.GetAttributeValue("title", null)
-            };
-        }
+            Uri = htmlNode.GetAttributeValue("href", null),
+            Rel = htmlNode.GetAttributeValue("rel", null),
+            Target = htmlNode.GetAttributeValue("target", null),
+            Title = htmlNode.GetAttributeValue("title", null)
+        };
+    }
 
-        private static object LinkData(HtmlNode htmlNode)
+    private static string DefaultValue(HtmlNode htmlNode)
+    {
+        if (!string.IsNullOrWhiteSpace(htmlNode.InnerText))
         {
-            return new LinkData
-            {
-                Uri = htmlNode.GetAttributeValue("href", null),
-                Rel = htmlNode.GetAttributeValue("rel", null),
-                Target = htmlNode.GetAttributeValue("target", null),
-                Title = htmlNode.GetAttributeValue("title", null)
-            };
-        }
-
-        private static string DefaultValue(HtmlNode htmlNode)
-        {
-            if (!string.IsNullOrWhiteSpace(htmlNode.InnerText))
-            {
-                return htmlNode.InnerText;
-            }
-            return null;
-        }
-
-        private static string ValueExitWhenEmpty(HtmlNode htmlNode)
-        {
-            if (string.IsNullOrWhiteSpace(htmlNode.InnerText))
-            {
-                throw new NotImplementedException();
-            }
             return htmlNode.InnerText;
         }
-
-        private static IEnumerable<Mark> EmptyMarks(HtmlNode htmlNode)
-        { return new List<Mark>(); }
-
-        private static IEnumerable<Mark> DefaultMarks(HtmlNode htmlNode)
-        { return GetMarks(htmlNode); }
-
-        private List<Node> DefaultContent(HtmlNode htmlNode)
-        { return ParseNodes(htmlNode.ChildNodes); }
-
-        public List<Node> ParseNodes(HtmlNodeCollection nodes)
-        {
-            var result = new List<Node>();
-
-            result.AddRange(nodes.Select(node =>
-            {
-                IHtmlDocumentToNodeParser parser = new HtmlElementToNodeParser<Unsupported>(content: (htmlNode) => { return ParseNodes(htmlNode.ChildNodes); });
-                if (_parsers.ContainsKey(node.Name))
-                {
-                    parser = _parsers[node.Name];
-                }
-                return parser.ParseNode(node);
-            }).Where(y => y != null));
-
-            return result;
-        }
-
-        public Node ParseNode(HtmlNode htmlNode)
-        {
-            if (htmlNode == null) { return null; }
-
-            var node = new T();
-            try
-            {
-                if (_contentParser != null)
-                {
-                    node.Content = _contentParser(htmlNode);
-                }
-                if (_dataParser != null)
-                {
-                    node.Data = _dataParser(htmlNode);
-                }
-                if (_valueParser != null)
-                {
-                    node.Value = _valueParser(htmlNode);
-                }
-                if (_marksParser != null)
-                {
-                    node.Marks = _marksParser(htmlNode) ?? new List<Mark>();
-                }
-            }
-            catch (NotImplementedException)
-            {
-                return null;
-            }
-            return node;
-        }
-        private static IEnumerable<Mark> GetMarks(HtmlNode node)
-        {
-            var result = node.DescendantsAndSelf().Select(node =>
-            {
-                switch (node.Name)
-                {
-                    case "strong":
-                    case "b":
-                        return Mark.Bold;
-                    case "u":
-                        return Mark.Underline;
-                    case "i":
-                    case "em":
-                        return Mark.Italic;
-                    case "code":
-                        return Mark.Code;
-                    case "#text":
-                        return null;
-                    default:
-                        return new Mark() { Type = "unsupported" };
-                }
-            }).Where(y => y != null);
-
-            return result;
-        }
+        return null;
     }
+
+    private static string ValueExitWhenEmpty(HtmlNode htmlNode)
+    {
+        if (string.IsNullOrWhiteSpace(htmlNode.InnerText))
+        {
+            throw new NotImplementedException();
+        }
+        return htmlNode.InnerText;
+    }
+
+    private static IEnumerable<Mark> EmptyMarks(HtmlNode htmlNode)
+    { return new List<Mark>(); }
+
+    private static IEnumerable<Mark> DefaultMarks(HtmlNode htmlNode)
+    { return GetMarks(htmlNode); }
+
+    private List<Node> DefaultContent(HtmlNode htmlNode)
+    { return ParseNodes(htmlNode.ChildNodes); }
+
+    public List<Node> ParseNodes(HtmlNodeCollection nodes)
+    {
+        var result = new List<Node>();
+
+        result.AddRange(nodes.Select(node =>
+        {
+            IHtmlDocumentToNodeParser parser = new HtmlElementToNodeParser<Unsupported>(content: (htmlNode) => { return ParseNodes(htmlNode.ChildNodes); });
+            if (_parsers.ContainsKey(node.Name))
+            {
+                parser = _parsers[node.Name];
+            }
+            return parser.ParseNode(node);
+        }).Where(y => y != null));
+
+        return result;
+    }
+
+    public Node ParseNode(HtmlNode htmlNode)
+    {
+        if (htmlNode == null) { return null; }
+
+        var node = new T();
+        try
+        {
+            if (_contentParser != null)
+            {
+                node.Content = _contentParser(htmlNode);
+            }
+            if (_dataParser != null)
+            {
+                node.Data = _dataParser(htmlNode);
+            }
+            if (_valueParser != null)
+            {
+                node.Value = _valueParser(htmlNode);
+            }
+            if (_marksParser != null)
+            {
+                node.Marks = _marksParser(htmlNode) ?? new List<Mark>();
+            }
+        }
+        catch (NotImplementedException)
+        {
+            return null;
+        }
+        return node;
+    }
+    private static IEnumerable<Mark> GetMarks(HtmlNode node)
+    {
+        var result = node.DescendantsAndSelf().Select(node =>
+        {
+            switch (node.Name)
+            {
+                case "strong":
+                case "b":
+                    return Mark.Bold;
+                case "u":
+                    return Mark.Underline;
+                case "i":
+                case "em":
+                    return Mark.Italic;
+                case "code":
+                    return Mark.Code;
+                case "#text":
+                    return null;
+                default:
+                    return new Mark() { Type = "unsupported" };
+            }
+        }).Where(y => y != null);
+
+        return result;
+    }
+}
 ```
 
 ### Layout Service output
@@ -500,7 +500,7 @@ For this part, we'll use the Sitecore JSS SDK for Angular. The solution as shown
 Sitecore comes with a RichText directive we need to use for rendering a rich text field. We need to make our implementation of this directive.
 
 ```typescript
-  import {
+import {
   Directive,
   EmbeddedViewRef,
   Input,
