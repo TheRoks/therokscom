@@ -11,7 +11,6 @@ import {
   TagContainer,
   TagIcon,
   TagListTitle,
-  TagName,
 } from "./style"
 
 const TagList: FunctionComponent = () => {
@@ -46,11 +45,11 @@ const TagList: FunctionComponent = () => {
                 {icon.extension !== "svg" ? (
                   <GatsbyImage
                     image={tag.icon.childImageSharp.gatsbyImageData}
+                    alt={tag.name}
                   />
                 ) : (
                   <TagIcon src={icon.publicURL} alt={tag.name} />
                 )}
-                <TagName>{tag.name}</TagName>
               </Link>
             </StyledTag>
           )
