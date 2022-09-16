@@ -77,6 +77,38 @@ module.exports = (themeOptions) => {
         options: manifest,
       },
       {
+        resolve: 'gatsby-plugin-vercel-deploy',
+        options: {
+          headers: [{
+            source: '/service-worker.js',
+            headers: [
+              {
+                key: 'Cache-Control',
+                value: 'public, max-age=0, must-revalidate',
+              },
+            ]
+            },
+            {
+              source: '/(.*)',
+              headers: [
+                {
+                  key: 'X-Content-Type-Options',
+                  value: 'nosniff',
+                },
+                {
+                  key: 'X-Frame-Options',
+                  value: 'DENY',
+                },
+                {
+                  key: 'X-XSS-Protection',
+                  value: '1; mode=block',
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
         resolve: `gatsby-plugin-offline`,
         options: {
           workboxConfig: {
