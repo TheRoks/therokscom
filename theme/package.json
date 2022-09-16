@@ -34,8 +34,8 @@
     "stylelint-processor-styled-components": "1.10.0"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.0.27",
-    "@mdx-js/react": "^1.0.27",
+    "@mdx-js/mdx": "^2.0.0",
+    "@mdx-js/react": "^2.0.0",
     "@types/styled-components": "^5.1.25",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
