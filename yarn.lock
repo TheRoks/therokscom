@@ -6127,6 +6127,11 @@ gatsby-plugin-utils@^3.17.0:
     mini-svg-data-uri "^1.4.4"
     svgo "^2.8.0"
 
+gatsby-plugin-vercel-deploy@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-vercel-deploy/-/gatsby-plugin-vercel-deploy-1.0.1.tgz#c06877edf839039a4b6a0a00032b66e54512e3d4"
+  integrity sha512-7yak1UTBNq+d48xofbakYYWitieq8moegCmTjXBfEV5glQGc7l1fJrz+FgwgahrQNX9+15FYTbWmj3gO6/hLUQ==
+
 gatsby-react-router-scroll@^5.23.0:
   version "5.23.0"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-5.23.0.tgz#40caa93a3b15ad0cfd8c8c0da1ce213bf71e363e"
