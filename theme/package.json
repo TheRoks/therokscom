@@ -22,7 +22,7 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.27.0",
     "eslint-plugin-jsx-a11y": "6.7.0",
-    "eslint-plugin-react": "7.31.11",
+    "eslint-plugin-react": "7.32.0",
     "gatsby": "4.25.2",
     "prettier": "2.8.2",
     "prettier-eslint": "15.0.1",
